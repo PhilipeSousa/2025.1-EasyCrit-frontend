@@ -1,0 +1,24 @@
+# deps
+/node_modules
+
+# build output
+/.next
+/out
+
+# production output
+/build
+
+#misc
+.DS_Store
+*.log
+*.lock
+
+# local env files
+.env.local
+.env.*.local
+
+# debug files
+next-debug.log
+
+# for vscode
+.vscode
