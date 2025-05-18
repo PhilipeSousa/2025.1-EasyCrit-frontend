@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check-style": "npx prettier .  --check",
+    "style": "npx prettier . --write"
   },
   "dependencies": {
     "next": "15.3.2",
