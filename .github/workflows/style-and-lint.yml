@@ -1,5 +1,5 @@
 name: style & lint
-on: [push, pull_request]
+on: [push]
 
 jobs:
   prettier:
