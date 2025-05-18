@@ -1,8 +1,8 @@
-name: style
+name: style & lint
 on: push
 
 jobs:
-  Style-Check-Src-Files:
+  prettier:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🖌️ Analizando e corrigindo código para encontrar erros de estilo."
