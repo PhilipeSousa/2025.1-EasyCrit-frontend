@@ -7,13 +7,16 @@ jobs:
     steps:
       - run: echo "🖌️ Analizando e corrigindo código para encontrar erros de estilo."
       
-      - name: Checkout code
+      - name: 🔦 Checkout
         uses: actions/checkout@v4
         
-      - name: Setup node
+      - name: 🧰 Setup node
         uses: actions/setup-node@v4
 
-      - name: 🎨 Rodando prettier
+      - name: 🎨 prettier
         run: |
           npm i
           npx prettier . --check
+
+      - if: failure()
+        run: echo "🚫 O prettier encotrou erros de estilo" && echo "Use o comando 'npx prettier . --write' para corrigir automaticamente"
