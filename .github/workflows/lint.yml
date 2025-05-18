@@ -13,10 +13,11 @@ jobs:
       - name: 🧰 Setup node
         uses: actions/setup-node@v4
 
-      - name: 🎨 prettier
+      - name: 🎨 Prettier
         run: |
           npm i
           npx prettier . --check
 
-      - if: failure()
+      - name: ❌ Em caso de falha
+        if: failure()
         run: echo "🚫 O prettier encotrou erros de estilo" && echo "Use o comando 'npx prettier . --write' para corrigir automaticamente"
