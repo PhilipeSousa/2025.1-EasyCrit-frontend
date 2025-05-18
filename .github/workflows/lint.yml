@@ -13,6 +13,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
 
+      - name: 🎨 Rodando prettier
       - run: |
           npm i
           npx prettier . --check
