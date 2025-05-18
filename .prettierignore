@@ -1,0 +1,26 @@
+# ignore .git and .github folders
+.git*
+
+# ignore node modules folder
+node_modules
+
+# ignore css files
+*.css
+
+# ignore prettier and eslint config files
+.prettier*
+eslint*
+
+# ignore package.json files
+package*.json
+
+# ignore repo README
+README.md
+
+# ignore tsconfig and next config files
+tsconfig.json
+next*
+
+# ignore docker related files
+Dockerfile*
+docker-compose*
