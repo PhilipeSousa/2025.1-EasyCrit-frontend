@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 services:
   easycrit-frontend:
     image: easycrit
@@ -10,5 +10,5 @@ services:
       - .:/app
       - /app/node_modules
       - /app/.next
-    ports: 
+    ports:
       - "3000:3000"
