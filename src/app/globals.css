@@ -24,6 +24,8 @@ body {
   font-family: var(--fonte-corpo);
   color: var(--preto-azulado);
   background-color: var(--cinza-muito-claro);
+  overflow: hidden;
+  height: 100%;
 }
 
 h1 {
