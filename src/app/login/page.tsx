@@ -7,7 +7,7 @@ import styles from './login.module.css'
 export default function LoginPage() {
   return (
     <>
-      {/* Navbar */}
+      
       <div className={styles.navbar}>
         <div className={styles.navLeft}>
           <Image
@@ -21,7 +21,7 @@ export default function LoginPage() {
         </div>
         <div className={styles.navRight}>
           <Image
-            src='/images/user-circle.png'  // você pode colocar aqui o ícone que quiser
+            src='/images/user-circle.png'  
             alt='User Icon'
             width={30}
             height={30}
@@ -29,7 +29,7 @@ export default function LoginPage() {
         </div>
       </div>
 
-      {/* Login Container */}
+      
       <div className={styles.mainContainer}>
         <div className={styles.loginBox}>
           <h2 className={styles.title}>BEM-VINDO DE VOLTA!</h2>
@@ -51,4 +51,4 @@ export default function LoginPage() {
       </div>
     </>
   )
-	}
+}

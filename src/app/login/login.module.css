@@ -1,6 +1,6 @@
-/* Navbar */
+
 .navbar {
-  background-color: #0a1612;
+  background-color: #071013;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,10 +24,10 @@
   cursor: pointer;
 }
 
-/* Login Page */
+
 .mainContainer {
-  background-color: #d3d3d3;
-  min-height: calc(100vh - 60px); /* descontando altura da navbar */
+  background-color: #AAAAAA;
+  min-height: calc(100vh - 60px); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +35,7 @@
 }
 
 .loginBox {
-  background-color: #0a1612;
+  background-color: #071013;
   padding: 30px;
   border-radius: 8px;
   width: 320px;
@@ -48,7 +48,7 @@
 }
 
 .title {
-  color: #ffffff;
+  color: #DFE0E2;
   font-size: 20px;
   margin-bottom: 20px;
 }
@@ -63,7 +63,7 @@
 }
 
 .inputGroup label {
-  color: #ffffff;
+  color: #DFE0E2;
   font-size: 14px;
   display: block;
   margin-bottom: 5px;
@@ -74,7 +74,7 @@
   padding: 10px;
   border-radius: 4px;
   border: none;
-  background-color: #ffffff;
+  background-color: #DFE0E2;
   font-size: 14px;
 }
 
@@ -85,8 +85,8 @@
 .submitButton {
   width: 100%;
   padding: 12px;
-  background-color: #f28500;
-  color: #ffffff;
+  background-color: #f77b20;
+  color: #AAAAAA;
   border: none;
   border-radius: 4px;
   font-weight: bold;
@@ -95,21 +95,20 @@
 }
 
 .submitButton:hover {
-  background-color: #ff9000;
+  background-color: #f77b20;
 }
 
 .registerLink {
-  color: #ffffff;
+  color: #DFE0E2;
   font-size: 12px;
   margin-top: 20px;
 }
 
 .registerLink a {
-  color: #f28500;
+  color: #f77b20;
   text-decoration: none;
 }
 
 .registerLink a:hover {
   text-decoration: underline;
 }
-
