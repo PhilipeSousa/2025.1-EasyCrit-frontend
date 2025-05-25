@@ -1,54 +1,54 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './login.module.css'
 
 export default function LoginPage() {
-	return (
-		<div className={styles.mainContainer}>
-			<div className={styles.orangeContainer}>
-				<div className={styles.blackContainer}>
-					<div className={styles.grayContainer}>
-						<div className={styles.formWrapper}>
-							<form>
-								<div className={styles.inputGroup}>
-									<label htmlFor='email'>Email</label>
-									<input type='email' id='email' className={styles.inputField} placeholder='exemplo@email.com' />
-								</div>
+  return (
+    <>
+      {/* Navbar */}
+      <div className={styles.navbar}>
+        <div className={styles.navLeft}>
+          <Image
+            src='/images/logo-easycrit-rounded.png'
+            alt='EasyCrit Logo'
+            width={40}
+            height={40}
+            priority
+          />
+          <span className={styles.siteName}>EasyCrit</span>
+        </div>
+        <div className={styles.navRight}>
+          <Image
+            src='/images/user-circle.png'  // você pode colocar aqui o ícone que quiser
+            alt='User Icon'
+            width={30}
+            height={30}
+          />
+        </div>
+      </div>
 
-								<div className={styles.inputGroup}>
-									<label htmlFor='senha'>Senha</label>
-									<input type='password' id='senha' className={styles.inputField} placeholder='••••••••' />
-								</div>
-
-								<div className={styles.Account}>
-									Esqueceu sua senha? <Link href='/EsqueceuSenha'>Clique aqui</Link>
-								</div>
-
-								<div className={styles.buttonWrapper}>
-									<button type='submit' className={styles.submitButton}>
-										ACESSAR CONTA
-									</button>
-								</div>
-							</form>
-						</div>
-
-						<div className={styles.logoWrapper}>
-							<Image
-								src='/images/logo-easycrit-rounded.png'
-								alt='EasyCrit Logo'
-								layout='responsive'
-								width={200}
-								height={200}
-								className={styles.logo}
-								priority
-							/>
-							<div className={styles.AccountNew}>
-								Não tem uma conta? <Link href='/cadastro'>Clique aqui</Link>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	)
-}
+      {/* Login Container */}
+      <div className={styles.mainContainer}>
+        <div className={styles.loginBox}>
+          <h2 className={styles.title}>BEM-VINDO DE VOLTA!</h2>
+          <form>
+            <div className={styles.inputGroup}>
+              <label htmlFor='email'>EMAIL</label>
+              <input type='email' id='email' placeholder='Seu email' className={styles.inputField} />
+            </div>
+            <div className={styles.inputGroup}>
+              <label htmlFor='senha'>SENHA</label>
+              <input type='password' id='senha' placeholder='Sua senha' className={styles.inputField} />
+            </div>
+            <button type='submit' className={styles.submitButton}>LOGIN</button>
+          </form>
+          <div className={styles.registerLink}>
+            PRECISA DE UMA CONTA? <Link href='/cadastro'>CADASTRE-SE</Link>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+	}

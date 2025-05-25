@@ -1,248 +1,115 @@
+/* Navbar */
+.navbar {
+  background-color: #0a1612;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
 
+.navLeft {
+  display: flex;
+  align-items: center;
+}
 
+.siteName {
+  color: #ffffff;
+  font-size: 20px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.navRight img {
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Login Page */
 .mainContainer {
-  background: var(--preto-azulado);
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 2rem;
-  box-sizing: border-box;
+  background-color: #d3d3d3;
+  min-height: calc(100vh - 60px); /* descontando altura da navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
 }
 
-.orangeContainer {
-  background: var(--laranja-vibrante);
-  width: min(90%, 1200px);
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-}
-
-.blackContainer {
-  background: var(--preto-azulado);
-  border-radius: 18px;
+.loginBox {
+  background-color: #0a1612;
   padding: 30px;
+  border-radius: 8px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-.grayContainer {
-  background: var(--cinza-claro);
-  border-radius: 16px;
-  padding: 2.5rem;
-  display: grid;
-  grid-template-columns: 1fr auto;
+.logoWrapper {
+  margin-bottom: 20px;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .formWrapper {
-  max-width: 400px;
-  padding: 1rem;
+  margin-bottom: 20px;
 }
 
 .inputGroup {
-  margin-bottom: 1.8rem;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.inputGroup label {
+  color: #ffffff;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .inputField {
   width: 100%;
   padding: 10px;
-  border: 2px solid var(--laranja-vibrante);
-  border-radius: 8px;
-  background: #fff;
-  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #ffffff;
+  font-size: 14px;
 }
 
 .buttonWrapper {
-  text-align: center;
-  margin: 2.5rem 0;
+  margin-top: 20px;
 }
 
 .submitButton {
-  font-family: var(--fonte-titulo);
   width: 100%;
-  padding: 14px 0;
+  padding: 12px;
+  background-color: #f28500;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.Account,
-.AccountNew {
-  font-weight: 500;
+.submitButton:hover {
+  background-color: #ff9000;
 }
 
-.Account a,
-.AccountNew a {
-  color: var(--preto-azulado);
+.registerLink {
+  color: #ffffff;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.registerLink a {
+  color: #f28500;
   text-decoration: none;
-  transition: color 0.3s;
 }
 
-.Account a:hover,
-.AccountNew a:hover {
-  color: var(--laranja-vibrante);
+.registerLink a:hover {
   text-decoration: underline;
 }
 
-.AccountNew {
-  text-align: center;
-  margin-top: 0.8rem;
-}
-
-.logo {
-
-  max-width: 280px;
-  border-radius: 50%;
-  border: 3px solid var(--laranja-vibrante);
-}
-
-.logoWrapper {
-  padding-bottom: 2rem;
-  margin-right: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-
-@media (max-width: 800px) {
-  .mainContainer {
-    background: none;
-    padding: 0;
-    position: relative;
-    height: 0;
-    overflow: hidden;
-  }
-
-  .orangeContainer {
-
-    position: absolute;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    padding: 2rem;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  .blackContainer,
-  .grayContainer {
-    padding: 1.5rem;
-    border-radius: 8px;
-    height: 100%;
-  }
-
-  .grayContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-  }
-
-  .formWrapper,
-  .logoWrapper {
-    width: 100%;
-    padding: 0.5rem;
-
-  }
-
-  .formWrapper {
-    max-width: 100%;
-    padding-bottom: 4rem;
-  }
-
-  .buttonWrapper {
-    margin: 1.5rem 0;
-  }
-
-  .logoWrapper {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  
-  .AccountNew{
-    margin-top: 2rem;
-  }
-
-  .submitButton {
-    font-size: 1rem;
-    margin-top: 2rem;
-  }
-}
-
-
-@media (max-width: 1180px) {
-  
-  .logoWrapper{
-    padding-left: 3rem;
-  }
-  
-
-}
-
-
-@media (max-width: 800px) {
-  .mainContainer {
-    background: none;
-    padding: 0;
-    position: relative;
-    height: 0;
-    overflow: hidden;
-  }
-
-  .orangeContainer {
-
-    position: absolute;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    padding: 2rem;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  .blackContainer,
-  .grayContainer {
-    padding: 1.5rem;
-    border-radius: 8px;
-    height: 100%;
-  }
-
-  .grayContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-  }
-
-  .formWrapper,
-  .logoWrapper {
-    width: 100%;
-    padding: 0.5rem;
-
-  }
-
-  .formWrapper {
-    max-width: 100%;
-    padding-bottom: 4rem;
-  }
-
-  .buttonWrapper {
-    margin: 1.5rem 0;
-  }
-
-  .logoWrapper {
-    width: 100%;
-    padding-left: 4rem;
-
-  }
-  
-  .AccountNew{
-    margin-top: 2rem;
-  }
-
-  .submitButton {
-    font-size: 1rem;
-    margin-top: 2rem;
-  }
-}
