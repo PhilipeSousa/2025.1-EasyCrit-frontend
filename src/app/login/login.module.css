@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .navbar {
   background-color: #071013;
@@ -17,6 +18,7 @@
   font-size: 20px;
   margin-left: 10px;
   font-weight: bold;
+  
 }
 
 .navRight img {
@@ -51,6 +53,11 @@
   color: #DFE0E2;
   font-size: 20px;
   margin-bottom: 20px;
+  font-family: 'Roboto',sans-serif;
+ 
+  
+
+
 }
 
 .formWrapper {
@@ -67,6 +74,7 @@
   font-size: 14px;
   display: block;
   margin-bottom: 5px;
+  
 }
 
 .inputField {
@@ -76,6 +84,7 @@
   border: none;
   background-color: #DFE0E2;
   font-size: 14px;
+  
 }
 
 .buttonWrapper {
@@ -107,6 +116,7 @@
 .registerLink a {
   color: #f77b20;
   text-decoration: none;
+  
 }
 
 .registerLink a:hover {
