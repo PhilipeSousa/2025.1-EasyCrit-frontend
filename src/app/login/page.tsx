@@ -9,7 +9,7 @@ export default function LoginPage() {
 		<>
 			<div className={styles.navbar}>
 				<div className={styles.navLeft}>
-					<Image src='/images/logo-easycrit-rounded.png' alt='EasyCrit Logo' width={40} height={40} priority />
+					<Image src='/images/logo-easycrit-rounded.png' alt='EasyCrit Logo' width={45} height={45} priority />
 					<span className={styles.siteName}>EasyCrit</span>
 				</div>
 				<div className={styles.navRight}>
