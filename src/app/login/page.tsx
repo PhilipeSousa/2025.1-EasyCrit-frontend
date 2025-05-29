@@ -34,7 +34,7 @@ export default function LoginPage() {
 						</button>
 					</form>
 					<div className={styles.registerLink}>
-						PRECISA DE UMA CONTA? <Link href='/cadastro'>CADASTRE-SE</Link>
+						<span className='registerText'>PRECISA DE UMA CONTA?</span> <Link href='/cadastro'>CADASTRE-SE</Link>
 					</div>
 				</div>
 			</div>
