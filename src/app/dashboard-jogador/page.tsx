@@ -233,8 +233,7 @@ const Box = (): JSX.Element => {
 										width: '100%',
 										textAlign: 'right',
 										paddingRight: '75px',
-									}}
-								>
+									}}>
 									MAPA
 								</div>
 								<Image
@@ -256,8 +255,7 @@ const Box = (): JSX.Element => {
 										width: '100%',
 										textAlign: 'right',
 										paddingRight: '30px',
-									}}
-								>
+									}}>
 									NOME DO MAPA
 								</div>
 
@@ -316,8 +314,7 @@ export default function Dashboard() {
 					zIndex: 1000,
 					cursor: 'pointer',
 					fontFamily: 'Cinzel, serif',
-				}}
-			>
+				}}>
 				<Image src='/images/profile.png' alt='Ícone Superior Direito' width={70} height={70} />
 			</div>
 
@@ -347,8 +344,7 @@ export default function Dashboard() {
 									fontSize: '14px',
 									marginBottom: '7px',
 									textAlign: 'center',
-								}}
-							>
+								}}>
 								CÓDIGO DE CONVITE PARA SESSÃO
 							</span>
 							<input
