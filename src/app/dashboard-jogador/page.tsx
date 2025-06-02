@@ -4,7 +4,7 @@ import styles from './dashboard.module.css'
 import Image from 'next/image'
 import React, { JSX, useEffect, useRef, useState } from 'react'
 
-export const Box = (): JSX.Element => {
+const Box = (): JSX.Element => {
 	const boxStyle: React.CSSProperties = {
 		width: '1140px',
 		height: '681px',
@@ -209,7 +209,6 @@ export const Box = (): JSX.Element => {
 							<span style={titleStyle}>{title}</span>
 						</div>
 						<div style={contentContainerStyle}>
-							{/* Game Master and Players*/}
 							<div style={columnStyle}>
 								<div style={mestreTextStyle}>MESTRE</div>
 								<Image src='/images/circle.png' alt='Avatar Mestre' width={70} height={70} style={profileImageStyle} />
@@ -227,7 +226,6 @@ export const Box = (): JSX.Element => {
 								</div>
 							</div>
 
-							{/*(Map and Statistics) */}
 							<div style={mapColumnStyle}>
 								<div
 									style={{
@@ -235,7 +233,8 @@ export const Box = (): JSX.Element => {
 										width: '100%',
 										textAlign: 'right',
 										paddingRight: '75px',
-									}}>
+									}}
+								>
 									MAPA
 								</div>
 								<Image
@@ -257,7 +256,8 @@ export const Box = (): JSX.Element => {
 										width: '100%',
 										textAlign: 'right',
 										paddingRight: '30px',
-									}}>
+									}}
+								>
 									NOME DO MAPA
 								</div>
 
@@ -316,7 +316,8 @@ export default function Dashboard() {
 					zIndex: 1000,
 					cursor: 'pointer',
 					fontFamily: 'Cinzel, serif',
-				}}>
+				}}
+			>
 				<Image src='/images/profile.png' alt='Ícone Superior Direito' width={70} height={70} />
 			</div>
 
@@ -339,7 +340,6 @@ export default function Dashboard() {
 						<button className={styles.sidebarButton}>ENTRAR NA SESSÃO</button>
 						<button className={`${styles.sidebarButton} ${styles.deleteButton}`}>SAIR DA CAMPANHA</button>
 
-						{/* CONVITE */}
 						<div style={{ marginTop: '-230px', display: 'flex', flexDirection: 'column' }}>
 							<span
 								style={{
@@ -347,7 +347,8 @@ export default function Dashboard() {
 									fontSize: '14px',
 									marginBottom: '7px',
 									textAlign: 'center',
-								}}>
+								}}
+							>
 								CÓDIGO DE CONVITE PARA SESSÃO
 							</span>
 							<input

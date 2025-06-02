@@ -4,7 +4,7 @@ import styles from './dashboard.module.css'
 import Image from 'next/image'
 import React, { JSX, useEffect, useRef, useState } from 'react'
 
-export const Box = (): JSX.Element => {
+const Box = (): JSX.Element => {
 	const boxStyle: React.CSSProperties = {
 		width: '1140px',
 		height: '681px',
