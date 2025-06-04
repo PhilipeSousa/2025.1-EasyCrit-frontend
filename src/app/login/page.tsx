@@ -19,24 +19,24 @@ export default function LoginPage() {
 
 			<div className={styles.mainContainer}>
 				<div className={styles.loginBox}>
-					<h2 className={styles.title}>BEM-VINDO DE VOLTA!</h2>
+					<h2 className={styles.title}>Bem-vindo de volta!</h2>
 					<form>
 						<div className={styles.inputGroup}>
-							<label htmlFor='email'>EMAIL</label>
+							<label htmlFor='email'>Email</label>
 							<input type='email' id='email' placeholder='Seu email' className={styles.inputField} />
 						</div>
 						<div className={styles.inputGroup}>
-							<label htmlFor='senha'>SENHA</label>
+							<label htmlFor='senha'>Senha</label>
 							<input type='password' id='senha' placeholder='Sua senha' className={styles.inputField} />
 						</div>
 						<button type='submit' className={styles.submitButton}>
-							LOGIN
+							Login
 						</button>
 					</form>
 					<div className={styles.registerLink}>
-						<span className='registerText'>PRECISA DE UMA CONTA?</span> <Link href='/cadastro'>CADASTRE-SE</Link>
+						<span className='registerText'>Precisa de uma conta?</span> <Link href='/cadastro'>Cadastre-se</Link>
 					</div>
-				</div>
+				</div>                                                                                                               
 			</div>
 		</>
 	)
