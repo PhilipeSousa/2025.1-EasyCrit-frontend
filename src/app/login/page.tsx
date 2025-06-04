@@ -36,7 +36,7 @@ export default function LoginPage() {
 					<div className={styles.registerLink}>
 						<span className='registerText'>Precisa de uma conta?</span> <Link href='/cadastro'>Cadastre-se</Link>
 					</div>
-				</div>                                                                                                               
+				</div>
 			</div>
 		</>
 	)
