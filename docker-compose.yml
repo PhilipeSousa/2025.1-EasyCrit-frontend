@@ -1,6 +1,7 @@
 version: "3.8"
 services:
   easycrit-frontend:
+    container_name: easycrit-frontend
     image: easycrit
     build:
       context: ./
@@ -11,4 +12,4 @@ services:
       - /app/node_modules
       - /app/.next
     ports:
-      - "3000:3000"
+      - "${FRONTEND_PORT}:3000"
