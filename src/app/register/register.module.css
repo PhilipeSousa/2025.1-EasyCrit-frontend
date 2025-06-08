@@ -17,12 +17,6 @@
   letter-spacing: 1px;
 }
 
-/* --- Full-height e reset de margens --- */
-html, body, #__next {
-  height: 100%;
-  margin: 0;
-}
-
 /* --- Container principal --- */
 .mainContainer {
   background: #DFE0E2;
