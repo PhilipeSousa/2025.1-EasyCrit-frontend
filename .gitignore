@@ -14,8 +14,7 @@
 *.lock
 
 # local env files
-.env.local
-.env.*.local
+.env
 
 # debug files
 next-debug.log
