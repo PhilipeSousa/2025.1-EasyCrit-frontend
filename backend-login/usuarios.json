@@ -1,12 +1,12 @@
 [
-  {
-    "email": "teste@easycrit.com",
-    "senha": "123456",
-    "nome": "Matheus"
-  },
-  {
-    "email": "user@easycrit.com",
-    "senha": "senha123",
-    "nome": "Usuário"
-  }
+	{
+		"email": "teste@easycrit.com",
+		"senha": "123456",
+		"nome": "Matheus"
+	},
+	{
+		"email": "user@easycrit.com",
+		"senha": "senha123",
+		"nome": "Usuário"
+	}
 ]
