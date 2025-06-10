@@ -27,7 +27,7 @@ export default function LoginPage() {
 			} else {
 				alert(resultado.mensagem)
 			}
-		} catch  {
+		} catch {
 			alert('Erro ao conectar com o servidor.')
 		}
 	}
