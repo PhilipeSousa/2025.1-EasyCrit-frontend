@@ -35,7 +35,7 @@ export default function LoginPage() {
 					</form>
 					<div className={styles.registerLink}>
 						<span className='registerText'>Precisa de uma conta?</span> <Link href='/register'>Cadastre-se</Link>
-				</div>
+					</div>
 				</div>
 			</div>
 		</>
