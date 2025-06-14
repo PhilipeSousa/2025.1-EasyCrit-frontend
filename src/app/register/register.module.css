@@ -1,4 +1,3 @@
-/* --- Header --- */
 .header {
   background: var(--preto-azulado);
   width: 100%;
@@ -7,6 +6,10 @@
   color: #fff;
   display: flex;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 .headerTitle {
   font-family: 'Cinzel', serif;
@@ -17,19 +20,25 @@
   letter-spacing: 1px;
 }
 
-/* --- Container principal --- */
+.pageContainer {
+  overflow-y: auto; 
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}
+
 .mainContainer {
   background: #DFE0E2;
-  height: 100vh;
+  flex-grow: 1;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 3rem;
   box-sizing: border-box;
+  padding-top: 6rem;
 }
 
-/* --- Caixa preta --- */
 .blackContainer {
   background: var(--preto-azulado);
   border-radius: 18px;
@@ -40,11 +49,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: visible;
   margin-block: 4rem;
 }
 
-/* --- FormWrapper --- */
 .formWrapper {
   max-width: 400px;
   width: 100%;
@@ -54,7 +61,6 @@
   align-items: stretch;
 }
 
-/* --- Inputs --- */
 .inputGroup {
   margin-bottom: 1rem;
   width: 100%;
@@ -76,7 +82,6 @@
   font-size: 0.75rem;
 }
 
-/* --- Saudação --- */
 .greeting {
   text-align: center;
   font-size: 1.25rem;
@@ -88,7 +93,10 @@
   text-transform: uppercase;
 }
 
-/* --- Escolha de aventura --- */
+.adventureChoice { 
+  margin-bottom: 2rem; 
+}
+
 .chooseAdventure {
   text-align: center;
   font-size: 0.7rem;
@@ -133,7 +141,6 @@
   text-align: center;
 }
 
-/* --- Botão de submit --- */
 .submitButton {
   font-family: var(--fonte-titulo);
   width: 100%;
@@ -152,7 +159,6 @@
   color: #000;
 }
 
-/* --- Link “Já tem uma conta?” --- */
 .AccountNew {
   text-align: left;
   margin-top: 0.8rem;
@@ -169,43 +175,158 @@
   text-decoration: underline;
 }
 
-/* --- Responsividade --- */
-/* Tablets e small desktops */
-@media (max-width: 1024px) {
+@media (min-width: 1441px) {
   .blackContainer {
-    max-width: 320px;
-    margin-block: 3rem;
-    padding: 40px 12px;
+    max-width: 450px;
+    padding: 40px 24px;
   }
   .greeting {
     font-size: 1.8rem;
   }
+  .inputGroup label {
+    font-size: 0.85rem;
+  }
+  .inputField {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  .roleImage {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .roleLabel {
+    font-size: 0.9rem;
+  }
   .submitButton {
-    padding: 12px 0;
+    padding: 16px 0;
+    font-size: 0.9rem;
+  }
+  .AccountNew {
+    font-size: 0.9rem;
   }
 }
 
-/* Celulares */
-@media (max-width: 600px) {
+@media (min-width: 769px) and (max-width: 1440px) {
   .blackContainer {
-    max-width: 280px;
-    margin-block: 2rem;
-    padding: 30px 8px;
+    max-width: 380px;
+    padding: 35px 20px;
   }
   .greeting {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+  }
+  .inputGroup label {
+    font-size: 0.75rem;
+  }
+  .inputField {
+    font-size: 0.8rem;
+    padding: 9px;
+  }
+  .roleImage {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  .roleLabel {
+    font-size: 0.85rem;
+  }
+  .submitButton {
+    padding: 15px 0;
+    font-size: 0.85rem;
+  }
+  .AccountNew {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 1rem;
+    height: 3.5rem;
+  }
+  .headerTitle {
+    font-size: 1.2rem;
+  }
+  .mainContainer {
+    padding: 2rem 1rem;
+    padding-top: 5.5rem;
+  }
+  .blackContainer {
+    max-width: 300px;
+    margin-block: 2rem;
+    padding: 25px 12px;
+  }
+  .greeting {
+    font-size: 1.4rem;
+  }
+  .inputGroup {
+    margin-bottom: 0.8rem;
+  }
+  .inputGroup label {
+    font-size: 0.65rem;
+  }
+  .inputField {
+    padding: 7px;
+    font-size: 0.7rem;
+  }
+  .roles {
+    gap: 0.8rem;
+  }
+  .roleImage {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  .roleLabel {
+    font-size: 0.75rem;
+  }
+  .submitButton {
+    padding: 12px 0;
+    font-size: 0.75rem;
+  }
+  .AccountNew {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContainer {
+    padding: 1.5rem 0.5rem;
+    padding-top: 5rem;
+  }
+  .blackContainer {
+    padding: 20px 10px;
+    margin-block: 1.5rem;
+  }
+  .greeting {
+    font-size: 1.2rem;
+  }
+  .inputGroup {
+    margin-bottom: 0.7rem;
   }
   .inputField {
     padding: 6px;
+    font-size: 0.65rem;
+  }
+  .roles {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .roleOption {
+    flex-direction: row; 
+    gap: 0.5rem;
+  }
+  .roleImage {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .roleLabel {
+    font-size: 0.7rem;
   }
   .submitButton {
     padding: 10px 0;
+    font-size: 0.7rem;
   }
-  .roles {
-    gap: 1.5rem;
-  }
-  .roleImage {
-    width: 32px !important;
-    height: 32px !important;
+  .AccountNew {
+    font-size: 0.65rem;
   }
 }
