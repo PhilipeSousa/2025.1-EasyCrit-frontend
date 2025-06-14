@@ -1,3 +1,4 @@
+// src/app/register/page.tsx
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './register.module.css'
@@ -35,7 +36,6 @@ export default function RegisterPage() {
 							<input type='password' id='confirm-password' className={styles.inputField} placeholder='••••••••' />
 						</div>
 
-						{/* Agrupando a lógica de escolha de personagem */}
 						<div className={styles.adventureChoice}>
 							<div className={styles.chooseAdventure}>Escolha sua aventura</div>
 							<div className={styles.roles}>
