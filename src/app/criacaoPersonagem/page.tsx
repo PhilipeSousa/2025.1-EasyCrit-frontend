@@ -6,8 +6,8 @@ import Image from 'next/image'
 
 export default function CriacaoPersonagem() {
 	const [nome, setNome] = useState('')
-	const [classe, setClasse] = useState('')
-	const [raca, setRaca] = useState('')
+	const [classe, setBibliografia] = useState('')
+	const [raca, setPreview] = useState('')
 	const [mensagem, setMensagem] = useState('')
 
 	const handleSubmit = (e: React.FormEvent) => {
@@ -35,19 +35,14 @@ export default function CriacaoPersonagem() {
 					<input
 						type='text'
 						value={classe}
-						onChange={(e) => setClasse(e.target.value)}
-						placeholder='Digite a classe (ex: Guerreiro)'
+						onChange={(e) => setBibliografia(e.target.value)}
+						placeholder='Digite a bibliografia'
 					/>
 				</div>
 
 				<div className={styles.grupoInput}>
 					<label>Preview da Ficha:</label>
-					<input
-						type='text'
-						value={raca}
-						onChange={(e) => setRaca(e.target.value)}
-						placeholder='Digite a raça (ex: Elfo)'
-					/>
+					<input type='text' value={raca} onChange={(e) => setPreview(e.target.value)} placeholder='Digite a preview' />
 				</div>
 
 				<div className={styles.grupoImagem}>
