@@ -8,13 +8,10 @@
 		"email": "user@easycrit.com",
 		"senha": "senha123",
 		"nome": "Usuário"
-
 	},
 	{
-		"email":"larasoiza917@gmail.com",
-		"senha":"190505",
+		"email": "larasoiza917@gmail.com",
+		"senha": "190505",
 		"nome": "Lara"
 	}
-
-
 ]
