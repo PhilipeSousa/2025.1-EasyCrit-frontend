@@ -1,0 +1,193 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #e5e5e5;
+}
+
+.sidebar {
+  width: 150px;
+  background-color: #0e0e0e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.starTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.titulo {
+  font-size: 24px;
+  color: #0e0e0e;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logout {
+  background: #333;
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.formulario {
+  background-color: #0e0e0e;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.subtitulo {
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.grupoInputs {
+  display: flex;
+  gap: 30px;
+}
+
+.inputArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputArea label {
+  color: #fff;
+  font-size: 14px;
+}
+
+.inputArea input,
+.inputArea textarea {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+}
+
+.inputArea textarea {
+  height: 150px;
+  resize: none;
+}
+
+.textareaBibliografia {
+  border: 2px solid #8000ff;
+}
+
+.colors {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.color {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.black { background: #000; }
+.green { background: #00ff99; }
+.yellow { background: #ffff00; }
+.orange { background: #ffaa00; }
+.red { background: #ff3333; }
+.pink { background: #ff00cc; }
+
+.previewArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.previewArea label {
+  color: #fff;
+}
+
+.previewArea input {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+}
+
+.previewInput {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.imagePlaceholder {
+  background-color: #2a2a2a;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 0 20px;
+}
+
+.iconClickable {
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancelar {
+  background: #2a2a2a;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.confirmar {
+  background: linear-gradient(to right, #ff9900, #ff3300);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.mensagem {
+  margin-top: 20px;
+  color: #0e0e0e;
+  text-align: center;
+  font-size: 16px;
+}
