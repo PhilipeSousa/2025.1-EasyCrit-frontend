@@ -25,18 +25,18 @@ export default function CriacaoPersonagem() {
 	return (
 		<div className={styles.container}>
 			<div className={styles.sidebar}>
-				<Image src="/images/logo-easycrit-rounded.png" alt="Logo EasyCrit" width={120} height={120} />
+				<Image src='/images/logo-easycrit-rounded.png' alt='Logo EasyCrit' width={120} height={120} />
 			</div>
 
 			<div className={styles.content}>
 				<div className={styles.topbar}>
 					<div className={styles.starTitle}>
-						<Image src="/images/star.png" alt="Star" width={24} height={24} />
+						<Image src='/images/star.png' alt='Star' width={24} height={24} />
 						<h1 className={styles.titulo}>Seu Personagem</h1>
 					</div>
 					<div className={styles.user}>
 						<button className={styles.logout}>Logout</button>
-						<Image src="/images/mclovin.png" alt="User" width={40} height={40} className={styles.avatar} />
+						<Image src='/images/mclovin.png' alt='User' width={40} height={40} className={styles.avatar} />
 					</div>
 				</div>
 
@@ -46,20 +46,14 @@ export default function CriacaoPersonagem() {
 					<div className={styles.grupoInputs}>
 						<div className={styles.inputArea}>
 							<label>Nome do Personagem</label>
-							<input
-								type="text"
-								value={nome}
-								onChange={(e) => setNome(e.target.value)}
-								placeholder="Digite o nome"
-							/>
+							<input type='text' value={nome} onChange={(e) => setNome(e.target.value)} placeholder='Digite o nome' />
 
 							<label>Bibliografia</label>
 							<textarea
 								value={classe}
 								onChange={(e) => setClasse(e.target.value)}
-								placeholder="Digite a bibliografia"
-								className={styles.textareaBibliografia}
-							></textarea>
+								placeholder='Digite a bibliografia'
+								className={styles.textareaBibliografia}></textarea>
 
 							<div className={styles.colors}>
 								<div className={`${styles.color} ${styles.black}`}></div>
@@ -75,19 +69,19 @@ export default function CriacaoPersonagem() {
 							<label>Preview da Ficha</label>
 							<div className={styles.previewInput}>
 								<input
-									type="text"
+									type='text'
 									value={preview}
 									onChange={(e) => setPreview(e.target.value)}
-									placeholder="Digite a preview"
+									placeholder='Digite a preview'
 								/>
-								<Image src="/images/identification.png" alt="Identificação" width={20} height={20} />
+								<Image src='/images/identification.png' alt='Identificação' width={20} height={20} />
 							</div>
 
 							<div className={styles.imagePlaceholder}>
-								<Image src="/images/file.png" alt="Preview" width={50} height={50} />
+								<Image src='/images/file.png' alt='Preview' width={50} height={50} />
 								<Image
-									src="/images/lixeira.png"
-									alt="Excluir"
+									src='/images/lixeira.png'
+									alt='Excluir'
 									width={24}
 									height={24}
 									onClick={handleReset}
@@ -98,8 +92,12 @@ export default function CriacaoPersonagem() {
 					</div>
 
 					<div className={styles.buttons}>
-						<button type="button" className={styles.cancelar} onClick={handleReset}>Cancelar</button>
-						<button type="submit" className={styles.confirmar}>Confirmar</button>
+						<button type='button' className={styles.cancelar} onClick={handleReset}>
+							Cancelar
+						</button>
+						<button type='submit' className={styles.confirmar}>
+							Confirmar
+						</button>
 					</div>
 				</form>
 
