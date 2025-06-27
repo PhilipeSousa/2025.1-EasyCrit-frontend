@@ -51,7 +51,6 @@ export default function CreateCampaignPage() {
 		e.preventDefault()
 		if (!containerRef.current || !imgRef.current) return
 
-
 		if (!imgRef.current.naturalWidth || !imgRef.current.naturalHeight) return
 
 		const dx = e.clientX - origin.x
