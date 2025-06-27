@@ -51,7 +51,7 @@ export default function CreateCampaignPage() {
 		e.preventDefault()
 		if (!containerRef.current || !imgRef.current) return
 
-		// Só prossiga se a imagem estiver carregada
+
 		if (!imgRef.current.naturalWidth || !imgRef.current.naturalHeight) return
 
 		const dx = e.clientX - origin.x
