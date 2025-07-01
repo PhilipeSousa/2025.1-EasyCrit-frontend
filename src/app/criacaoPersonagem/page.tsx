@@ -89,13 +89,7 @@ export default function CriacaoPersonagem() {
 									className={styles.iconClickable}
 								/>
 
-								<Image
-									src='/images/heroicon.png'
-									alt='Upload'
-									width={24}
-									height={24}
-									className={styles.uploadIcon}
-								/>
+								<Image src='/images/heroicon.png' alt='Upload' width={24} height={24} className={styles.uploadIcon} />
 							</div>
 						</div>
 					</div>
