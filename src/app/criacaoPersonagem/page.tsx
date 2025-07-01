@@ -78,7 +78,8 @@ export default function CriacaoPersonagem() {
 							</div>
 
 							<div className={styles.imagePlaceholder}>
-								<Image src='/images/file.png' alt='Preview' width={50} height={50} />
+								<Image src='/images/identification.png' alt='Preview' width={50} height={50} />
+
 								<Image
 									src='/images/lixeira.png'
 									alt='Excluir'
@@ -86,6 +87,14 @@ export default function CriacaoPersonagem() {
 									height={24}
 									onClick={handleReset}
 									className={styles.iconClickable}
+								/>
+
+								<Image
+									src='/images/heroicon.png'
+									alt='Upload'
+									width={24}
+									height={24}
+									className={styles.uploadIcon}
 								/>
 							</div>
 						</div>
