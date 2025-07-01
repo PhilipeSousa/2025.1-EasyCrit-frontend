@@ -20,11 +20,14 @@
   box-sizing: border-box;
 }
 
+
+
+
 body {
   font-family: var(--fonte-corpo);
   color: var(--preto-azulado);
   background-color: var(--cinza-muito-claro);
-  overflow: hidden;
+  overflow: auto;
   height: 100%;
 }
 
