@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import styles from './criacaoPersonagem.module.css'
+import styles from './create-character.module.css'
 import Image from 'next/image'
 
-export default function CriacaoPersonagem() {
+export default function CreateCharacter() {
 	const [nome, setNome] = useState('')
 	const [classe, setClasse] = useState('')
 	const [preview, setPreview] = useState('')
