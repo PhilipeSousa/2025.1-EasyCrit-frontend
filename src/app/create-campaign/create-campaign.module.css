@@ -1,0 +1,284 @@
+.navbar {
+  background-color: #071013;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 22px;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+}
+
+.siteName {
+  color: #ffffff;
+  font-size: 20px;
+  margin-left: 10px;
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+}
+
+.navRight img {
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mainContainer {
+  background: linear-gradient(
+    to bottom,
+    rgba(223, 224, 226, 0.8),
+    rgba(183, 153, 156, 0.4),
+    rgba(247, 123, 32, 0.2)
+  );
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 16px;
+  box-sizing: border-box;
+}
+
+.formBox {
+  background-color: #071013;
+  padding: 32px;
+  padding-bottom: 50px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.title {
+  color: #DFE0E2;
+  font-size: 24px;
+  margin-bottom: 24px;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .columns {
+    flex-direction: row;
+  }
+  .descriptionField {
+    height: 244px;
+    width: 100%;
+  }
+
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.column label {
+  color: #DFE0E2;
+  font-size: 12px;
+  margin-bottom: 6px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.inputField {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  border: none;
+  background-color: #DFE0E2;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.descriptionField {
+  height: 244px;
+  resize: none;
+}
+
+.cancelButton {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  padding: 12px;
+  background-color: #ccc;
+  color: #000;
+  border: none;
+  border-radius: 0.6rem;
+  margin-top: auto;
+  cursor: pointer;
+}
+
+.map {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap; 
+  width: 100%;
+  margin-bottom: 16px;
+  gap: 8px;
+}
+
+@media (max-width: 767px) {
+  .map {
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+.mapPreview {
+  position: relative;
+  width: 355px;
+  height: 240px;
+  background: #DFE0E2;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+@media (max-width: 767px) {
+  .mapPreview {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.sideIcons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 8px;
+  margin-top: 8px;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+
+
+.trashButton,
+.uploadButton,
+.zoomButton {
+  background: #DFE0E2;
+  color: #071013;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+  user-select: none;
+}
+
+.zoomReset {
+  background: #DFE0E2;
+  color: #071013;
+  border: none;
+  padding: 9px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+  user-select: none;
+}
+
+.trashButton {
+  padding: 6px;
+  margin-top: -8px;
+}
+
+.trashButton:hover,
+.uploadButton:hover,
+.zoomButton:hover {
+  background-color: #f77b20;
+  color: white;
+}
+
+.fileInput {
+  display: none;
+}
+
+.submitButton {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  padding: 12px;
+  background-color: #f77b20;
+  color: white;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  margin-top: auto;
+}
+
+.submitButton:hover {
+  border: 1px solid #f77b20;
+  background: #071013;
+  color: #f77b20;
+}
+
+.errorMsg {
+  min-height: 1.2em; 
+  color: #f77b20;
+  font-size: 12px;
+  margin-top: -12px;
+  margin-bottom: 12px;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 767px) {
+  .sideIcons {
+    flex-direction: row;
+    margin-left: 0;
+    margin-top: 0;
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .zoomButton {
+    padding: 6px;
+    margin-top: -8px;
+ 
+}
+  .zoomReset {
+  
+    padding: 6px;
+    margin-top: -8px;
+}
+}
+
+
+@media (max-width: 767px) {
+  .submitButton {
+    order: 1;
+    width: 100%;
+  }
+
+  .cancelButton {
+    order: 2;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+}
