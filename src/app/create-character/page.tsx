@@ -31,7 +31,7 @@ export default function CreateCharacter() {
 			<div className={styles.content}>
 				<div className={styles.topbar}>
 					<div className={styles.starTitle}>
-						<Image src='/images/star.png' alt='Star' width={24} height={24} />
+						<Image src='/star.svg' alt='Star' width={28} height={28} />
 						<h1 className={styles.titulo}>Seu Personagem</h1>
 					</div>
 					<div className={styles.user}>
