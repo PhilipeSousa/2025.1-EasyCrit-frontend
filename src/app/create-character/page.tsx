@@ -31,7 +31,7 @@ export default function CreateCharacter() {
 			<div className={styles.content}>
 				<div className={styles.topbar}>
 					<div className={styles.starTitle}>
-						<Image src='/star.svg' alt='Star' width={28} height={28} />
+						<Image src='/star.svg' alt='Star icon' width={28} height={28} />
 						<h1 className={styles.titulo}>Seu Personagem</h1>
 					</div>
 					<div className={styles.user}>
@@ -45,14 +45,14 @@ export default function CreateCharacter() {
 
 					<div className={styles.grupoInputs}>
 						<div className={styles.inputArea}>
-							<label>Nome do Personagem</label>
+							<label>NOME DO PERSONAGEM</label>
 							<input type='text' value={nome} onChange={(e) => setNome(e.target.value)} placeholder='Digite o nome' />
 
-							<label>Bibliografia</label>
+							<label>BIOGRAFIA</label>
 							<textarea
 								value={classe}
 								onChange={(e) => setClasse(e.target.value)}
-								placeholder='Digite a bibliografia'
+								placeholder='Digite a biografia do seu personagem'
 								className={styles.textAreaBibliografia}></textarea>
 
 							<div className={styles.colors}>
@@ -66,7 +66,7 @@ export default function CreateCharacter() {
 						</div>
 
 						<div className={styles.previewArea}>
-							<label>Preview da Ficha</label>
+							<label>PREVIEW DA FICHA</label>
 							<div className={styles.previewInput}>
 								<input
 									type='text'
@@ -79,8 +79,18 @@ export default function CreateCharacter() {
 							</div>
 
 							<div className={styles.imagePlaceholder}>
-								<Image src='/character-sheet.svg' alt='Preview' width={50} height={50} />
+								<Image 
+									src='/character-sheet.svg' 
+									alt='Preview' 
+									width={50} 
+									height={50} 
+								/>
+							</div>
+						</div>
 
+						<div className={styles.buttonArea}>
+							
+							<div className={styles.deleteUploadButton}>
 								<Image
 									src='/trash.svg'
 									alt='Excluir'
@@ -90,8 +100,16 @@ export default function CreateCharacter() {
 									className={styles.iconClickable}
 								/>
 
-								<Image src='/upload.svg' alt='Upload' width={24} height={24} className={styles.uploadIcon} />
-							</div>
+								<Image 	
+									src='/upload.svg' 
+									alt='Upload' 
+									width={26} 
+									height={26} 
+									className={styles.uploadIcon} 
+								/>
+								</div>
+
+					
 						</div>
 					</div>
 
