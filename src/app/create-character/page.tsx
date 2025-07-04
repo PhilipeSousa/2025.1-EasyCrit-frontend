@@ -53,7 +53,7 @@ export default function CreateCharacter() {
 								value={classe}
 								onChange={(e) => setClasse(e.target.value)}
 								placeholder='Digite a bibliografia'
-								className={styles.textareaBibliografia}></textarea>
+								className={styles.textAreaBibliografia}></textarea>
 
 							<div className={styles.colors}>
 								<div className={`${styles.color} ${styles.black}`}></div>
@@ -74,22 +74,23 @@ export default function CreateCharacter() {
 									onChange={(e) => setPreview(e.target.value)}
 									placeholder='Digite a preview'
 								/>
-								<Image src='/images/identification.png' alt='Identificação' width={20} height={20} />
+								
+								
 							</div>
 
 							<div className={styles.imagePlaceholder}>
-								<Image src='/images/identification.png' alt='Preview' width={50} height={50} />
+								<Image src='/character-sheet.svg' alt='Preview' width={50} height={50} />
 
 								<Image
-									src='/images/lixeira.png'
+									src='/trash.svg'
 									alt='Excluir'
-									width={24}
-									height={24}
+									width={26}
+									height={26}
 									onClick={handleReset}
 									className={styles.iconClickable}
 								/>
 
-								<Image src='/images/heroicon.png' alt='Upload' width={24} height={24} className={styles.uploadIcon} />
+								<Image src='/upload.svg' alt='Upload' width={24} height={24} className={styles.uploadIcon} />
 							</div>
 						</div>
 					</div>

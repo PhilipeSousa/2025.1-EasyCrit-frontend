@@ -88,7 +88,9 @@
 .inputArea label {
   color: #fff;
   font-size: 13px;
+  font-family: Roboto;
 }
+
 
 .inputArea input,
 .inputArea textarea {
@@ -96,6 +98,7 @@
   border-radius: 8px;
   border: none;
   background-color: #d9d9d9;
+  font-family: Roboto;
 }
 
 .inputArea textarea {
@@ -103,7 +106,7 @@
   resize: none;
 }
 
-.textareaBibliografia {
+.textAreaBibliografia {
   border: 2px solid #8000ff;
 }
 
@@ -157,7 +160,7 @@
 
 .imagePlaceholder {
   background-color: #d9d9d9;
-  height: 170px;
+  height: 200px;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -213,4 +216,10 @@
   color: #0e0e0e;
   text-align: center;
   font-size: 16px;
+}
+
+.iconsButtons {
+  background-color: #cfcfcf;
+  border-radius: 5px;
+  padding: 0px 5px;
 }
