@@ -131,4 +131,10 @@
 .registerLink a:hover {
   text-decoration: underline;
 }
- 
+ .mensagem {
+  color: #f77b20;
+  font-size: 13px;
+  margin-top: 15px;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+}
