@@ -1,0 +1,332 @@
+.header {
+  background: var(--preto-azulado);
+  width: 100%;
+  height: 4rem;
+  padding: 0 2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.headerTitle {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #DFE0E2;
+  margin-left: 1rem;
+  letter-spacing: 1px;
+}
+
+.pageContainer {
+  overflow-y: auto; 
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContainer {
+  background: #DFE0E2;
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  box-sizing: border-box;
+  padding-top: 6rem;
+}
+
+.blackContainer {
+  background: var(--preto-azulado);
+  border-radius: 18px;
+  padding: 30px 16px;
+  width: 100%;
+  max-width: 360px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block: 4rem;
+}
+
+.formWrapper {
+  max-width: 400px;
+  width: 100%;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.inputGroup {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.inputGroup label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #DFE0E2;
+}
+.inputField {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 2px solid #DFE0E2;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.75rem;
+}
+
+.greeting {
+  text-align: center;
+  font-size: 1.25rem;
+  font-family: 'Cinzel', serif;
+  color: var(--branco, rgba(255, 255, 255, 0.98));
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.adventureChoice { 
+  margin-bottom: 2rem; 
+}
+
+.chooseAdventure {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--branco, rgba(255, 255, 255, 0.98));
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+.roles {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.roleOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.radioInput {
+  display: none;
+}
+.roleImage {
+  border: 2px solid transparent;
+  object-fit: cover;
+  filter: brightness(0) invert(1);
+  width: 40px !important;
+  height: 40px !important;
+}
+.roleOption input[type="radio"]:checked + .roleImage {
+  background-color: var(--laranja-vibrante, #F77B20);
+  border-radius: 20px;
+  filter: brightness(1.1);
+}
+.roleLabel {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #DFE0E2;
+  font-family: 'Cinzel', serif;
+  font-weight: 300;
+  text-align: center;
+}
+
+.submitButton {
+  font-family: var(--fonte-titulo);
+  width: 100%;
+  padding: 14px 0;
+  background: var(--laranja-vibrante, #F77B20);
+  color: #071113;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.submitButton:hover {
+  background: #ff9439;
+  color: #000;
+}
+
+.AccountNew {
+  text-align: left;
+  margin-top: 0.8rem;
+  font-weight: 500;
+  color: var(--laranja-vibrante, #F77B20);
+  padding-left: 2px;
+}
+.AccountNew a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.AccountNew a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 1441px) {
+  .blackContainer {
+    max-width: 450px;
+    padding: 40px 24px;
+  }
+  .greeting {
+    font-size: 1.8rem;
+  }
+  .inputGroup label {
+    font-size: 0.85rem;
+  }
+  .inputField {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  .roleImage {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .roleLabel {
+    font-size: 0.9rem;
+  }
+  .submitButton {
+    padding: 16px 0;
+    font-size: 0.9rem;
+  }
+  .AccountNew {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1440px) {
+  .blackContainer {
+    max-width: 380px;
+    padding: 35px 20px;
+  }
+  .greeting {
+    font-size: 1.5rem;
+  }
+  .inputGroup label {
+    font-size: 0.75rem;
+  }
+  .inputField {
+    font-size: 0.8rem;
+    padding: 9px;
+  }
+  .roleImage {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  .roleLabel {
+    font-size: 0.85rem;
+  }
+  .submitButton {
+    padding: 15px 0;
+    font-size: 0.85rem;
+  }
+  .AccountNew {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 1rem;
+    height: 3.5rem;
+  }
+  .headerTitle {
+    font-size: 1.2rem;
+  }
+  .mainContainer {
+    padding: 2rem 1rem;
+    padding-top: 5.5rem;
+  }
+  .blackContainer {
+    max-width: 300px;
+    margin-block: 2rem;
+    padding: 25px 12px;
+  }
+  .greeting {
+    font-size: 1.4rem;
+  }
+  .inputGroup {
+    margin-bottom: 0.8rem;
+  }
+  .inputGroup label {
+    font-size: 0.65rem;
+  }
+  .inputField {
+    padding: 7px;
+    font-size: 0.7rem;
+  }
+  .roles {
+    gap: 0.8rem;
+  }
+  .roleImage {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  .roleLabel {
+    font-size: 0.75rem;
+  }
+  .submitButton {
+    padding: 12px 0;
+    font-size: 0.75rem;
+  }
+  .AccountNew {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContainer {
+    padding: 1.5rem 0.5rem;
+    padding-top: 5rem;
+  }
+  .blackContainer {
+    padding: 20px 10px;
+    margin-block: 1.5rem;
+  }
+  .greeting {
+    font-size: 1.2rem;
+  }
+  .inputGroup {
+    margin-bottom: 0.7rem;
+  }
+  .inputField {
+    padding: 6px;
+    font-size: 0.65rem;
+  }
+  .roles {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .roleOption {
+    flex-direction: row; 
+    gap: 0.5rem;
+  }
+  .roleImage {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .roleLabel {
+    font-size: 0.7rem;
+  }
+  .submitButton {
+    padding: 10px 0;
+    font-size: 0.7rem;
+  }
+  .AccountNew {
+    font-size: 0.65rem;
+  }
+}
