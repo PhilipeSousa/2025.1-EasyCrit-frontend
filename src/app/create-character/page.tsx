@@ -22,6 +22,9 @@ export default function CreateCharacter() {
 		setMensagem('')
 	}
 
+
+
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.sidebar}>
@@ -49,15 +52,27 @@ export default function CreateCharacter() {
 
 					<div className={styles.grupoInputs}>
 						<div className={styles.inputArea}>
-							<label>NOME DO PERSONAGEM</label>
-							<input type='text' value={nome} onChange={(e) => setNome(e.target.value)} placeholder='Digite o nome' />
+							<label htmlFor="nameCharacter">NOME DO PERSONAGEM</label>
+							<input 
+								type='text' 
+								id="nameCharacter"
+								value={nome} 
+								onChange={(e) => setNome(e.target.value)} 
+								placeholder='Digite o nome'
+								maxLength="50"
+							/>
 
-							<label>BIOGRAFIA</label>
+							<label htmlFor="biography">BIOGRAFIA</label>
 							<textarea
 								value={classe}
+								id="biography"
 								onChange={(e) => setClasse(e.target.value)}
 								placeholder='Digite a biografia do seu personagem'
-								className={styles.textAreaBiografia}></textarea>
+								className={styles.textAreaBiografia}
+								maxLength="250"
+							>
+						
+							</textarea>
 
 							<div className={styles.colors}>
 								<input type='radio' name='color' id='black' value='black' className={styles.color} hidden />
@@ -104,7 +119,10 @@ export default function CreateCharacter() {
 							*/}
 
 							<div className={styles.imagePlaceholder}>
-								<Image src='/character-sheet.svg' alt='Preview' width={50} height={50} />
+								<div>Personagem: {nome}</div>
+								<div>História: </div>
+								<div>	{classe}</div>
+								<Image src='/character-sheet.svg' alt='Preview' width={50} height={50} className={styles.imagePreview}/>
 							</div>
 						</div>
 
