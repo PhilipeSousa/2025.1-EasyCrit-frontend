@@ -76,7 +76,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
+  gap: 15px;
 }
 
 .inputArea {
@@ -109,22 +109,25 @@
 }
 
 .textAreaBibliografia {
-  border: 2px solid #8000ff;
+  	border: 2px solid #8000ff;
 }
 
 .colors {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	margin-top: 10px;
+	color: white;
+
 }
 
 .color {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  cursor: pointer;
+	/* O input está escondido e o label é estilizado*/
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	cursor: pointer;
 }
 
 .color:hover {
@@ -135,12 +138,34 @@
   transform: scale(0.95);
 }
 
-.black { background: #000; }
-.green { background: #00ff99; }
-.yellow { background: #ffff00; }
-.orange { background: #ffaa00; }
-.red { background: #ff3333; }
-.pink { background: #ff00cc; }
+.black 	{ background-color: #000000; } /* Muda a cor do botão no Chrome e Firefox */
+.green 	{ background-color: #00fc50; }
+.yellow { background-color: #ffff00; }
+.orange { background-color: #ffaa00; }
+.red 	{ background-color: #ff3333; }
+.pink 	{ background-color: #ff00cc; }
+
+.buttonColors {
+	/* label dos input radios das cores*/
+	padding: 15px;
+	border-radius: 100%;
+	cursor: pointer;
+	border: 2px solid;
+}
+
+.buttonColors:hover {
+	transform: scale(1.1);
+}
+
+.buttonColors:active {
+	transform: scale(0.98);
+}
+
+.color:checked + .buttonColors {
+	/* Estilo para visualizar cor selecionada*/
+	transform: scale(1.2);
+}
+
 
 .previewArea {
   flex: 1;
@@ -170,7 +195,7 @@
 
 .imagePlaceholder {
   background-color: #d9d9d9;
-  height: 200px;
+  height: 245px;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -182,20 +207,7 @@
   max-width: 60px;
 }
 
-.iconClickable {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  background-color: #cfcfcf;
-}
 
-.uploadIcon {
-  position: absolute;
-  top: 50px;
-  right: 10px;
-  cursor: pointer;
-}
 
 .buttons {
   display: flex;
@@ -251,15 +263,25 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  max-width: 40px;
+  gap: 8px;
+  max-width: 34px;
   
 }
 
-.deleteUploadButtons {
-  background-color: #cfcfcf;
+
+.iconClickable {
+	position: relative;
+	top: 30px;
+	cursor: pointer;
+	background-color: #cfcfcf;
+	border-radius: 5px;
 }
 
-.deleteUploadButtons:hover {
-  background-color: #ff6600;
+
+.iconClickable:hover {
+	background-color: #b1b1b1;
+}
+
+.iconClickable:active {
+	background-color: #8a8888;
 }

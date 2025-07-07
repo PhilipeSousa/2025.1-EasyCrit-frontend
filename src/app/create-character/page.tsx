@@ -56,17 +56,41 @@ export default function CreateCharacter() {
 								className={styles.textAreaBibliografia}></textarea>
 
 							<div className={styles.colors}>
+								
+								<input type="radio" name="color" id ="black" value="black" className={styles.color} hidden />
+								<label htmlFor="black" className={`${styles.buttonColors} ${styles.black} `}></label>
+								
+								<input type="radio" name="color" id ="green" value="green" className={styles.color} hidden />
+								<label htmlFor="green" className={`${styles.buttonColors} ${styles.green} `}></label>
+								
+								<input type="radio" name="color" id ="yellow" value="yellow" className={styles.color} hidden />
+								<label htmlFor="yellow" className={`${styles.buttonColors} ${styles.yellow} `}></label>
+								
+								<input type="radio" name="color" id ="orange" value="orange" className={styles.color} hidden />
+								<label htmlFor="orange" className={`${styles.buttonColors} ${styles.orange} `}></label>
+								
+								<input type="radio" name="color" id ="red" value="red" className={styles.color} hidden />
+								<label htmlFor="red" className={`${styles.buttonColors} ${styles.red} `}></label>
+								
+								<input type="radio" name="color" id ="pink" value="pink" className={styles.color} hidden/>
+								<label htmlFor="pink" className={`${styles.buttonColors} ${styles.pink} `}></label>
+																
+
+								{/*
+								Mudei para inputs a seleção de cor do personagem com inputs
 								<div className={`${styles.color} ${styles.black}`}></div>
 								<div className={`${styles.color} ${styles.green}`}></div>
 								<div className={`${styles.color} ${styles.yellow}`}></div>
 								<div className={`${styles.color} ${styles.orange}`}></div>
 								<div className={`${styles.color} ${styles.red}`}></div>
 								<div className={`${styles.color} ${styles.pink}`}></div>
+								*/}
 							</div>
 						</div>
 
 						<div className={styles.previewArea}>
 							<label>PREVIEW DA FICHA</label>
+							{/* 
 							<div className={styles.previewInput}>
 								<input
 									type='text'
@@ -75,6 +99,7 @@ export default function CreateCharacter() {
 									placeholder='Digite a preview'
 								/>
 							</div>
+							*/} 
 
 							<div className={styles.imagePlaceholder}>
 								<Image src='/character-sheet.svg' alt='Preview' width={50} height={50} />
@@ -82,18 +107,28 @@ export default function CreateCharacter() {
 						</div>
 
 						<div className={styles.buttonArea}>
-							<div className={styles.deleteUploadButton}>
+							<button type='button' className={styles.iconClickable}>
 								<Image
 									src='/trash.svg'
 									alt='Excluir'
-									width={26}
-									height={26}
+									width={28}
+									height={28}
 									onClick={handleReset}
-									className={styles.iconClickable}
+									
 								/>
+							</button>
 
-								<Image src='/upload.svg' alt='Upload' width={26} height={26} className={styles.uploadIcon} />
-							</div>
+							<button type='button' className={styles.iconClickable}>
+								<Image 
+									src='/upload.svg' 
+									alt='Upload' 
+									width={24} 
+									height={24} 
+									 
+								/>
+							</button>
+
+							
 						</div>
 					</div>
 
