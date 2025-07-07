@@ -59,7 +59,7 @@ export default function CreateCharacter() {
 								value={classe}
 								onChange={(e) => setClasse(e.target.value)}
 								placeholder='Digite a biografia do seu personagem'
-								className={styles.textAreaBibliografia}></textarea>
+								className={styles.textAreaBiografia}></textarea>
 
 							<div className={styles.colors}>
 								<input type='radio' name='color' id='black' value='black' className={styles.color} hidden />
