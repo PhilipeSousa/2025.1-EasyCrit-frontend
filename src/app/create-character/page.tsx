@@ -10,9 +10,22 @@ export default function CreateCharacter() {
 	const [preview, setPreview] = useState('')
 	const [mensagem, setMensagem] = useState('')
 
+	const [errors, setErrors] = useState<Record<string, string>>({})
+
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault()
-		setMensagem(`Personagem ${nome} criado com sucesso!`)
+		const newErrors: Record<string, string> = {}
+
+		if (!nome.trim()) newErrors.nome = 'Campo obrigatório'
+		if (!classe.trim()) newErrors.classe = 'Campo obrigatório'
+		if (!nome.trim()) newErrors.nome = 'Campo obrigatório'
+
+		setErrors(newErrors)
+
+		if (Object.keys(newErrors).length === 0) {
+			alert(`Personagem ${nome}enviado com sucesso!`)
+			setMensagem(`Personagem ${nome} criado com sucesso!`)
+		}
 	}
 
 	const handleReset = () => {
@@ -21,7 +34,7 @@ export default function CreateCharacter() {
 		setPreview('')
 		setMensagem('')
 	}
-
+	
 
 
 
@@ -61,6 +74,7 @@ export default function CreateCharacter() {
 								placeholder='Digite o nome'
 								maxLength="50"
 							/>
+							{errors.nome && <p className={styles.errorMsg}>{errors.nome}</p>}
 
 							<label htmlFor="biography">BIOGRAFIA</label>
 							<textarea
@@ -71,11 +85,12 @@ export default function CreateCharacter() {
 								className={styles.textAreaBiografia}
 								maxLength="250"
 							>
-						
 							</textarea>
+							{errors.classe && <p className={styles.errorMsg}>{errors.classe}</p>}
+
 
 							<div className={styles.colors}>
-								<input type='radio' name='color' id='black' value='black' className={styles.color} hidden />
+								<input type='radio' name='color' id='black' value='black' className={styles.color} hidden defaultChecked/>
 								<label htmlFor='black' className={`${styles.buttonColors} ${styles.black} `}></label>
 
 								<input type='radio' name='color' id='green' value='green' className={styles.color} hidden />

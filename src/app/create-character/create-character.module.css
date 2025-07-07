@@ -85,6 +85,15 @@
     text-align: center;
 }
 
+.errorMsg {
+  min-height: 1.2em; 
+  color: #f77b20;
+  font-size: 12px;
+  margin-top: -8px;
+  margin-bottom: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
 .grupoInputs {
     display: flex;
     justify-content: center;
@@ -238,29 +247,38 @@
 
 
 .cancelar {
-    background: #696969;
-    color: #fff;
+    background: #cfcfcf;
+    color: #black;
     border: none;
     padding: 12px 30px;
-    border-radius: 8px;
+    border-radius: 0.6rem;
     cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
 }
 
 .confirmar {
-    background: #ff6600;
-    color: #fff;
-    border: none;
+    padding: 50px;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
     padding: 12px 30px;
-    border-radius: 8px;
+    background-color: #f77b20;
+    color: white;
+    border: none;
+    border-radius: 0.6rem;
     cursor: pointer;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    
 }
 
 .cancelar:hover {
-    background-color: #505050;
+    background-color: #b3b3b3;
 }
 
 .confirmar:hover {
-    background-color: #be520a;
+    border: 1px solid #f77b20;
+    background: #071013;
+    color: #f77b20;
 }
 
 .cancelar:active {
