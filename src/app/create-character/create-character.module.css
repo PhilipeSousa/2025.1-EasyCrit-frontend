@@ -138,6 +138,11 @@
 
 }
 
+.colorText {
+    color: white;
+    font-size: 13px;
+}
+
 .colors {
     display: flex;
     justify-content: center;

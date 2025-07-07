@@ -65,7 +65,7 @@ export default function CreateCharacter() {
 
 					<div className={styles.grupoInputs}>
 						<div className={styles.inputArea}>
-							<label htmlFor="nameCharacter">NOME DO PERSONAGEM</label>
+							<label htmlFor="nameCharacter">Nome do personagem</label>
 							<input 
 								type='text' 
 								id="nameCharacter"
@@ -76,7 +76,7 @@ export default function CreateCharacter() {
 							/>
 							{errors.nome && <p className={styles.errorMsg}>{errors.nome}</p>}
 
-							<label htmlFor="biography">BIOGRAFIA</label>
+							<label htmlFor="biography">Biografia</label>
 							<textarea
 								value={classe}
 								id="biography"
@@ -88,8 +88,9 @@ export default function CreateCharacter() {
 							</textarea>
 							{errors.classe && <p className={styles.errorMsg}>{errors.classe}</p>}
 
-
+							<p className={styles.colorText}>Escolha sua cor:</p>
 							<div className={styles.colors}>
+
 								<input type='radio' name='color' id='black' value='black' className={styles.color} hidden defaultChecked/>
 								<label htmlFor='black' className={`${styles.buttonColors} ${styles.black} `}></label>
 
@@ -121,7 +122,7 @@ export default function CreateCharacter() {
 						</div>
 
 						<div className={styles.previewArea}>
-							<label>PREVIEW DA FICHA</label>
+							<label>Preview da ficha</label>
 							{/* 
 							<div className={styles.previewInput}>
 								<input
