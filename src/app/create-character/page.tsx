@@ -35,9 +35,7 @@ export default function CreateCharacter() {
 						<h1 className={styles.titulo}>Seu Personagem</h1>
 					</div>
 					<div className={styles.user}>
-						<div className={styles.helloUser}>
-							Olá, Nome do Usuário
-						</div>
+						<div className={styles.helloUser}>Olá, Nome do Usuário</div>
 						<button className={styles.logout}>Logout</button>
 
 						{/*
@@ -121,7 +119,6 @@ export default function CreateCharacter() {
 								<Image src='/upload.svg' alt='Upload' width={24} height={24} />
 							</button>
 							*/}
-							
 						</div>
 					</div>
 
