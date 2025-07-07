@@ -34,9 +34,6 @@ export default function CreateCharacter() {
 		setPreview('')
 		setMensagem('')
 	}
-	
-
-
 
 	return (
 		<div className={styles.container}>
@@ -65,33 +62,38 @@ export default function CreateCharacter() {
 
 					<div className={styles.grupoInputs}>
 						<div className={styles.inputArea}>
-							<label htmlFor="nameCharacter">Nome do personagem</label>
-							<input 
-								type='text' 
-								id="nameCharacter"
-								value={nome} 
-								onChange={(e) => setNome(e.target.value)} 
+							<label htmlFor='nameCharacter'>Nome do personagem</label>
+							<input
+								type='text'
+								id='nameCharacter'
+								value={nome}
+								onChange={(e) => setNome(e.target.value)}
 								placeholder='Digite o nome'
-								maxLength="50"
+								maxLength='50'
 							/>
 							{errors.nome && <p className={styles.errorMsg}>{errors.nome}</p>}
 
-							<label htmlFor="biography">Biografia</label>
+							<label htmlFor='biography'>Biografia</label>
 							<textarea
 								value={classe}
-								id="biography"
+								id='biography'
 								onChange={(e) => setClasse(e.target.value)}
 								placeholder='Digite a biografia do seu personagem'
 								className={styles.textAreaBiografia}
-								maxLength="250"
-							>
-							</textarea>
+								maxLength='250'></textarea>
 							{errors.classe && <p className={styles.errorMsg}>{errors.classe}</p>}
 
 							<p className={styles.colorText}>Escolha sua cor:</p>
 							<div className={styles.colors}>
-
-								<input type='radio' name='color' id='black' value='black' className={styles.color} hidden defaultChecked/>
+								<input
+									type='radio'
+									name='color'
+									id='black'
+									value='black'
+									className={styles.color}
+									hidden
+									defaultChecked
+								/>
 								<label htmlFor='black' className={`${styles.buttonColors} ${styles.black} `}></label>
 
 								<input type='radio' name='color' id='green' value='green' className={styles.color} hidden />
@@ -137,8 +139,14 @@ export default function CreateCharacter() {
 							<div className={styles.imagePlaceholder}>
 								<div>Personagem: {nome}</div>
 								<div>História: </div>
-								<div>	{classe}</div>
-								<Image src='/character-sheet.svg' alt='Preview' width={50} height={50} className={styles.imagePreview}/>
+								<div> {classe}</div>
+								<Image
+									src='/character-sheet.svg'
+									alt='Preview'
+									width={50}
+									height={50}
+									className={styles.imagePreview}
+								/>
 							</div>
 						</div>
 
