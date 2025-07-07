@@ -74,22 +74,14 @@ export default function CreateCharacter() {
 									onChange={(e) => setPreview(e.target.value)}
 									placeholder='Digite a preview'
 								/>
-								
-								
 							</div>
 
 							<div className={styles.imagePlaceholder}>
-								<Image 
-									src='/character-sheet.svg' 
-									alt='Preview' 
-									width={50} 
-									height={50} 
-								/>
+								<Image src='/character-sheet.svg' alt='Preview' width={50} height={50} />
 							</div>
 						</div>
 
 						<div className={styles.buttonArea}>
-							
 							<div className={styles.deleteUploadButton}>
 								<Image
 									src='/trash.svg'
@@ -100,16 +92,8 @@ export default function CreateCharacter() {
 									className={styles.iconClickable}
 								/>
 
-								<Image 	
-									src='/upload.svg' 
-									alt='Upload' 
-									width={26} 
-									height={26} 
-									className={styles.uploadIcon} 
-								/>
-								</div>
-
-					
+								<Image src='/upload.svg' alt='Upload' width={26} height={26} className={styles.uploadIcon} />
+							</div>
 						</div>
 					</div>
 
