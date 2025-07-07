@@ -56,25 +56,23 @@ export default function CreateCharacter() {
 								className={styles.textAreaBibliografia}></textarea>
 
 							<div className={styles.colors}>
-								
-								<input type="radio" name="color" id ="black" value="black" className={styles.color} hidden />
-								<label htmlFor="black" className={`${styles.buttonColors} ${styles.black} `}></label>
-								
-								<input type="radio" name="color" id ="green" value="green" className={styles.color} hidden />
-								<label htmlFor="green" className={`${styles.buttonColors} ${styles.green} `}></label>
-								
-								<input type="radio" name="color" id ="yellow" value="yellow" className={styles.color} hidden />
-								<label htmlFor="yellow" className={`${styles.buttonColors} ${styles.yellow} `}></label>
-								
-								<input type="radio" name="color" id ="orange" value="orange" className={styles.color} hidden />
-								<label htmlFor="orange" className={`${styles.buttonColors} ${styles.orange} `}></label>
-								
-								<input type="radio" name="color" id ="red" value="red" className={styles.color} hidden />
-								<label htmlFor="red" className={`${styles.buttonColors} ${styles.red} `}></label>
-								
-								<input type="radio" name="color" id ="pink" value="pink" className={styles.color} hidden/>
-								<label htmlFor="pink" className={`${styles.buttonColors} ${styles.pink} `}></label>
-																
+								<input type='radio' name='color' id='black' value='black' className={styles.color} hidden />
+								<label htmlFor='black' className={`${styles.buttonColors} ${styles.black} `}></label>
+
+								<input type='radio' name='color' id='green' value='green' className={styles.color} hidden />
+								<label htmlFor='green' className={`${styles.buttonColors} ${styles.green} `}></label>
+
+								<input type='radio' name='color' id='yellow' value='yellow' className={styles.color} hidden />
+								<label htmlFor='yellow' className={`${styles.buttonColors} ${styles.yellow} `}></label>
+
+								<input type='radio' name='color' id='orange' value='orange' className={styles.color} hidden />
+								<label htmlFor='orange' className={`${styles.buttonColors} ${styles.orange} `}></label>
+
+								<input type='radio' name='color' id='red' value='red' className={styles.color} hidden />
+								<label htmlFor='red' className={`${styles.buttonColors} ${styles.red} `}></label>
+
+								<input type='radio' name='color' id='pink' value='pink' className={styles.color} hidden />
+								<label htmlFor='pink' className={`${styles.buttonColors} ${styles.pink} `}></label>
 
 								{/*
 								Mudei para inputs a seleção de cor do personagem com inputs
@@ -99,7 +97,7 @@ export default function CreateCharacter() {
 									placeholder='Digite a preview'
 								/>
 							</div>
-							*/} 
+							*/}
 
 							<div className={styles.imagePlaceholder}>
 								<Image src='/character-sheet.svg' alt='Preview' width={50} height={50} />
@@ -108,27 +106,12 @@ export default function CreateCharacter() {
 
 						<div className={styles.buttonArea}>
 							<button type='button' className={styles.iconClickable}>
-								<Image
-									src='/trash.svg'
-									alt='Excluir'
-									width={28}
-									height={28}
-									onClick={handleReset}
-									
-								/>
+								<Image src='/trash.svg' alt='Excluir' width={28} height={28} onClick={handleReset} />
 							</button>
 
 							<button type='button' className={styles.iconClickable}>
-								<Image 
-									src='/upload.svg' 
-									alt='Upload' 
-									width={24} 
-									height={24} 
-									 
-								/>
+								<Image src='/upload.svg' alt='Upload' width={24} height={24} />
 							</button>
-
-							
 						</div>
 					</div>
 
