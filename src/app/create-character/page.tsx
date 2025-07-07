@@ -35,8 +35,14 @@ export default function CreateCharacter() {
 						<h1 className={styles.titulo}>Seu Personagem</h1>
 					</div>
 					<div className={styles.user}>
+						<div className={styles.helloUser}>
+							Olá, Nome do Usuário
+						</div>
 						<button className={styles.logout}>Logout</button>
-						<Image src='/images/mclovin.png' alt='User' width={40} height={40} className={styles.avatar} />
+
+						{/*
+						<Image src='/images/mclovin.png' alt='User' width={40} height={40} className={styles.avatar} />						
+						*/}
 					</div>
 				</div>
 
@@ -109,9 +115,13 @@ export default function CreateCharacter() {
 								<Image src='/trash.svg' alt='Excluir' width={28} height={28} onClick={handleReset} />
 							</button>
 
+							{/*
+							Ocultado botão de upload de ficha  
 							<button type='button' className={styles.iconClickable}>
 								<Image src='/upload.svg' alt='Upload' width={24} height={24} />
 							</button>
+							*/}
+							
 						</div>
 					</div>
 
