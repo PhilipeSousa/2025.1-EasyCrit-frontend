@@ -31,7 +31,7 @@ export default function CreateCharacter() {
 	const handleReset = () => {
 		setNome('')
 		setClasse('')
-		setPreview('')
+		//setPreview('')
 		setMensagem('')
 	}
 
