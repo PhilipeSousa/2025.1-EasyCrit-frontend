@@ -11,7 +11,8 @@ export default function RegisterPage() {
 	const [password, setPassword] = useState('')
 	const [confirmPassword, setConfirmPassword] = useState('')
 	const [username, setUsername] = useState('')
-	const [role, setRole] = useState('master')
+
+	const [role, setRole] = useState<'DUNGEON_MASTER' | 'PLAYER'>('DUNGEON_MASTER')
 	const [error, setError] = useState('')
 	const [loading, setLoading] = useState(false)
 
@@ -28,39 +29,36 @@ export default function RegisterPage() {
 			return
 		}
 
+		const roleToSend = role === 'DUNGEON_MASTER' ? 'dungeon master' : 'player'
+
 		try {
-			const response = await fetch('http://localhost:8001/users/', {
+			const response = await fetch('http://localhost:8080/users/', {
 				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
+				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
-					email: email,
-					password: password,
-					username: username,
-					role: role,
+					email,
+					password,
+					username,
+					role: roleToSend,
 				}),
 			})
 
 			if (!response.ok) {
 				const errorData = await response.json()
-				setError(errorData.detail || 'Erro ao cadastrar usuário.')
+				if (Array.isArray(errorData.detail)) {
+					const messages = (errorData.detail as { msg: string }[]).map((e) => e.msg).join('; ')
+					setError(messages)
+				} else {
+					setError(errorData.detail || 'Erro ao cadastrar usuário.')
+				}
 			} else {
-				// 'userData' não é usado após a resposta ser OK, então removemos a atribuição.
-				// const userData = await response.json()
+				localStorage.setItem('role', role)
 				router.push('/login')
 			}
 		} catch (err) {
-			// O tipo de 'err' é 'unknown' por padrão em modo estrito
 			let errorMessage = 'Ocorreu um erro desconhecido ao tentar conectar com o servidor.'
-			if (err instanceof Error) {
-				// Se for uma instância de Error, usamos a mensagem
-				errorMessage = `Ocorreu um erro ao tentar conectar com o servidor: ${err.message}`
-			} else if (typeof err === 'string') {
-				// Se for uma string, usamos a string diretamente
-				errorMessage = `Ocorreu um erro ao tentar conectar com o servidor: ${err}`
-			}
-			// Se for outro tipo, a mensagem padrão será usada
+			if (err instanceof Error) errorMessage = `Erro: ${err.message}`
+			else if (typeof err === 'string') errorMessage = `Erro: ${err}`
 			setError(errorMessage)
 		} finally {
 			setLoading(false)
@@ -133,10 +131,10 @@ export default function RegisterPage() {
 										<input
 											type='radio'
 											name='role'
-											value='master'
+											value='DUNGEON_MASTER'
 											className={styles.radioInput}
-											checked={role === 'master'}
-											onChange={() => setRole('master')}
+											checked={role === 'DUNGEON_MASTER'}
+											onChange={() => setRole('DUNGEON_MASTER')}
 										/>
 										<Image
 											src='/mestre-icon.svg'
@@ -151,10 +149,10 @@ export default function RegisterPage() {
 										<input
 											type='radio'
 											name='role'
-											value='player'
+											value='PLAYER'
 											className={styles.radioInput}
-											checked={role === 'player'}
-											onChange={() => setRole('player')}
+											checked={role === 'PLAYER'}
+											onChange={() => setRole('PLAYER')}
 										/>
 										<Image src='/jogador-icon.svg' alt='Player' width={40} height={40} className={styles.roleImage} />
 										<span className={styles.roleLabel}>Jogador</span>
@@ -162,15 +160,12 @@ export default function RegisterPage() {
 								</div>
 							</div>
 
-							{/* Exibe mensagem de erro, se houver */}
 							{error && <p style={{ color: 'red', textAlign: 'center', marginTop: '1rem' }}>{error}</p>}
 
-							{/* Botão de envio, desabilitado durante o carregamento */}
 							<button type='submit' className={styles.submitButton} disabled={loading}>
 								{loading ? 'CADASTRANDO...' : 'CADASTRAR-SE'}
 							</button>
 
-							{/* Link para a página de login */}
 							<p className={styles.AccountNew}>
 								<Link href='/login'>Já tem uma conta?</Link>
 							</p>

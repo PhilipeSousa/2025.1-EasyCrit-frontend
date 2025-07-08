@@ -3,29 +3,42 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import styles from './login.module.css'
 
 export default function LoginPage() {
-	const [email, setEmail] = useState('')
+	const [username, setUsername] = useState('')
 	const [senha, setSenha] = useState('')
 	const [mensagem, setMensagem] = useState('')
+	const router = useRouter()
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
 
 		try {
-			const res = await fetch('http://localhost:4000/api/login', {
+			const res = await fetch('http://localhost:8080/auth/login', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ email, senha }),
+				body: JSON.stringify({ username, password: senha }),
 			})
 
 			const data = await res.json()
 
-			if (res.ok) {
-				setMensagem(`Login bem-sucedido! Bem-vindo, ${data.user}.`)
+			if (res.ok && data.access_token) {
+				localStorage.setItem('token', data.access_token)
+
+				setMensagem('Login bem-sucedido!')
+				const role = localStorage.getItem('role')
+
+				if (role === 'DUNGEON_MASTER') {
+					router.push('/dashboard-master')
+				} else if (role === 'PLAYER') {
+					router.push('/dashboard-player')
+				} else {
+					setMensagem('Função de usuário não encontrada. Faça o cadastro novamente.')
+				}
 			} else {
-				setMensagem(data.error)
+				setMensagem(data.error || data.detail || 'Erro no login.')
 			}
 		} catch {
 			setMensagem('Erro de conexão com o servidor.')
@@ -50,14 +63,14 @@ export default function LoginPage() {
 
 					<form onSubmit={handleSubmit}>
 						<div className={styles.inputGroup}>
-							<label htmlFor='email'>Email</label>
+							<label htmlFor='username'>Usuário</label>
 							<input
-								type='email'
-								id='email'
-								placeholder='Seu email'
+								type='text'
+								id='username'
+								placeholder='Seu usuário'
 								className={styles.inputField}
-								value={email}
-								onChange={(e) => setEmail(e.target.value)}
+								value={username}
+								onChange={(e) => setUsername(e.target.value)}
 								required
 							/>
 						</div>
