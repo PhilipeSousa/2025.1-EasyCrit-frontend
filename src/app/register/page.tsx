@@ -46,7 +46,7 @@ export default function RegisterPage() {
 			if (!response.ok) {
 				const errorData = await response.json()
 				if (Array.isArray(errorData.detail)) {
-					const messages = errorData.detail.map((e: any) => e.msg).join('; ')
+					const messages = (errorData.detail as { msg: string }[]).map((e) => e.msg).join('; ')
 					setError(messages)
 				} else {
 					setError(errorData.detail || 'Erro ao cadastrar usuário.')

@@ -7,7 +7,7 @@ import Image from 'next/image'
 export default function CreateCharacter() {
 	const [nome, setNome] = useState('')
 	const [classe, setClasse] = useState('')
-	const [preview, setPreview] = useState('')
+	//const [preview, setPreview] = useState('')
 	const [mensagem, setMensagem] = useState('')
 
 	const [errors, setErrors] = useState<Record<string, string>>({})
