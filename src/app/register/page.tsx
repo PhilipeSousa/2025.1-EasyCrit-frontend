@@ -46,13 +46,22 @@ export default function RegisterPage() {
 				const errorData = await response.json()
 				setError(errorData.detail || 'Erro ao cadastrar usuário.')
 			} else {
-				const userData = await response.json()
-				console.log('Usuário cadastrado com sucesso:', userData)
+				// 'userData' não é usado após a resposta ser OK, então removemos a atribuição.
+				// const userData = await response.json()
 				router.push('/login')
 			}
 		} catch (err) {
-			console.error('Erro na requisição:', err)
-			setError('Ocorreu um erro ao tentar conectar com o servidor.')
+			// O tipo de 'err' é 'unknown' por padrão em modo estrito
+			let errorMessage = 'Ocorreu um erro desconhecido ao tentar conectar com o servidor.'
+			if (err instanceof Error) {
+				// Se for uma instância de Error, usamos a mensagem
+				errorMessage = `Ocorreu um erro ao tentar conectar com o servidor: ${err.message}`
+			} else if (typeof err === 'string') {
+				// Se for uma string, usamos a string diretamente
+				errorMessage = `Ocorreu um erro ao tentar conectar com o servidor: ${err}`
+			}
+			// Se for outro tipo, a mensagem padrão será usada
+			setError(errorMessage)
 		} finally {
 			setLoading(false)
 		}
