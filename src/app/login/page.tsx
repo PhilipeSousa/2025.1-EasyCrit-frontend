@@ -23,10 +23,8 @@ export default function LoginPage() {
 			})
 
 			const data = await res.json()
-			console.log('🛠️ Resposta do backend:', data)
 
 			if (res.ok && data.access_token) {
-				
 				localStorage.setItem('token', data.access_token)
 
 				setMensagem('Login bem-sucedido!')
