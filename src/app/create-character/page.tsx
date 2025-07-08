@@ -69,7 +69,7 @@ export default function CreateCharacter() {
 								value={nome}
 								onChange={(e) => setNome(e.target.value)}
 								placeholder='Digite o nome'
-								maxLength='50'
+								maxLength={50}
 							/>
 							{errors.nome && <p className={styles.errorMsg}>{errors.nome}</p>}
 
@@ -80,7 +80,8 @@ export default function CreateCharacter() {
 								onChange={(e) => setClasse(e.target.value)}
 								placeholder='Digite a biografia do seu personagem'
 								className={styles.textAreaBiografia}
-								maxLength='250'></textarea>
+								maxLength={250}
+							/>
 							{errors.classe && <p className={styles.errorMsg}>{errors.classe}</p>}
 
 							<p className={styles.colorText}>Escolha sua cor:</p>
