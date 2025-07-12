@@ -3,6 +3,7 @@
 import styles from './dashboard.module.css'
 import Image from 'next/image'
 import React from 'react'
+import { useRouter } from 'next/navigation'
 
 const campaigns = [
 	{ logo: '/images/rocket.png', title: 'UMA ODISSÉIA NO ESPAÇO' },
@@ -10,6 +11,8 @@ const campaigns = [
 ]
 
 const Box = () => {
+	
+
 	return (
 		<div className={styles.boxContainer}>
 			{campaigns.map(({ logo, title }, idx) => (
@@ -59,6 +62,13 @@ const Box = () => {
 }
 
 export default function Dashboard() {
+
+		const router = useRouter()
+		const handleLogout = () => {
+			localStorage.removeItem('token')
+			router.push('/login')
+		}
+		
 	return (
 		<>
 			<header className={styles.topBar}>
@@ -66,7 +76,7 @@ export default function Dashboard() {
 					<Image src='/images/group.png' alt='Logo Dashboard' width={70} height={70} />
 				</div>
 				<h1>DASHBOARD DO JOGADOR</h1>
-				<button className={styles.logoutButton}>LOGOUT</button>
+				<button onClick={handleLogout} className={styles.logoutButton}>LOGOUT</button>
 			</header>
 
 			<div className={styles.container}>

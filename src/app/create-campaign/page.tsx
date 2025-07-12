@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState, ChangeEvent, FormEvent, useRef } from 'react'
 import styles from './create-campaign.module.css'
+import { useRouter } from 'next/navigation'
 
 export default function CreateCampaignPage() {
 	const [campaignName, setCampaignName] = useState('')
@@ -90,7 +91,7 @@ export default function CreateCampaignPage() {
 
 	function zoomOut() {
 		setZoom((z) => Math.max(z - 0.2, 1))
-		setTranslate({ x: 0, y: 0 })
+		
 	}
 
 	function resetPosition() {
@@ -115,6 +116,12 @@ export default function CreateCampaignPage() {
 			alert('Formulário enviado com sucesso!')
 		}
 	}
+
+
+		const router = useRouter()
+		const handleMasterDashboard = () => {
+			router.push('/dashboard-master')
+		}
 
 	return (
 		<>
@@ -278,7 +285,7 @@ export default function CreateCampaignPage() {
 							/>
 							{errors.startTime && <p className={styles.errorMsg}>{errors.startTime}</p>}
 
-							<button type='submit' className={styles.submitButton}>
+							<button onClick={handleMasterDashboard} type='submit' className={styles.submitButton}>
 								Confirmar
 							</button>
 						</div>
