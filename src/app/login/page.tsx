@@ -1,9 +1,8 @@
 'use client'
-
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import styles from './login.module.css'
 
 export default function LoginPage() {
@@ -14,34 +13,49 @@ export default function LoginPage() {
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
+		setMensagem('')
 
 		try {
-			const res = await fetch('http://localhost:8080/auth/login', {
+			const loginRes = await fetch('/api/login', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({ username, password: senha }),
 			})
 
-			const data = await res.json()
+			const loginData = await loginRes.json()
 
-			if (res.ok && data.access_token) {
-				localStorage.setItem('token', data.access_token)
+			if (!loginRes.ok) {
+				setMensagem(loginData.detail || 'Erro no login.')
+				return
+			}
 
-				setMensagem('Login bem-sucedido!')
-				const role = localStorage.getItem('role')
+			const token = loginData.access_token
 
-				if (role === 'DUNGEON_MASTER') {
-					router.push('/dashboard-master')
-				} else if (role === 'PLAYER') {
-					router.push('/dashboard-player')
-				} else {
-					setMensagem('Função de usuário não encontrada. Faça o cadastro novamente.')
-				}
+			localStorage.setItem('token', token)
+
+			const userRes = await fetch('/api/userinfo', {
+				method: 'GET',
+				headers: { Authorization: `Bearer ${token}` },
+			})
+
+			const userInfo = await userRes.json()
+
+			if (!userRes.ok || !userInfo.role) {
+				setMensagem('Não foi possível recuperar o role do usuário.')
+				return
+			}
+
+			const role = userInfo.role.toUpperCase()
+
+			if (role === 'DUNGEON_MASTER') {
+				router.push('/dashboard-master')
+			} else if (role === 'PLAYER') {
+				router.push('/dashboard-player')
 			} else {
-				setMensagem(data.error || data.detail || 'Erro no login.')
+				setMensagem('Função do usuário desconhecida.')
 			}
 		} catch {
-			setMensagem('Erro de conexão com o servidor.')
+			setMensagem('Erro ao conectar com o servidor.')
 		}
 	}
 

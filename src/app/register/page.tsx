@@ -32,33 +32,29 @@ export default function RegisterPage() {
 		const roleToSend = role === 'DUNGEON_MASTER' ? 'dungeon master' : 'player'
 
 		try {
-			const response = await fetch('http://localhost:8080/users/', {
+			const response = await fetch('/api/register', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({
-					email,
-					password,
-					username,
-					role: roleToSend,
-				}),
+				body: JSON.stringify({ email, password, username, role: roleToSend }),
 			})
 
+			const result = await response.json()
+
 			if (!response.ok) {
-				const errorData = await response.json()
-				if (Array.isArray(errorData.detail)) {
-					const messages = (errorData.detail as { msg: string }[]).map((e) => e.msg).join('; ')
+				if (Array.isArray(result.detail)) {
+					const messages = result.detail.map((e: { msg: string }) => e.msg).join('; ')
 					setError(messages)
 				} else {
-					setError(errorData.detail || 'Erro ao cadastrar usuário.')
+					setError(result.detail || 'Erro ao cadastrar usuário.')
 				}
 			} else {
-				localStorage.setItem('role', role)
 				router.push('/login')
 			}
 		} catch (err) {
-			let errorMessage = 'Ocorreu um erro desconhecido ao tentar conectar com o servidor.'
-			if (err instanceof Error) errorMessage = `Erro: ${err.message}`
-			else if (typeof err === 'string') errorMessage = `Erro: ${err}`
+			const errorMessage =
+				err instanceof Error
+					? `Erro: ${err.message}`
+					: 'Ocorreu um erro desconhecido ao tentar conectar com o servidor.'
 			setError(errorMessage)
 		} finally {
 			setLoading(false)
