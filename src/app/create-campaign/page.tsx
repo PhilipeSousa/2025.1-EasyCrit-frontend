@@ -197,28 +197,26 @@ export default function CreateCampaignPage() {
 								style={{ cursor: dragging ? 'grabbing' : 'grab' }}>
 								<div className={styles.mapPreview}>
 									{mapPreview ? (
-										<img
-											ref={imgRef}
+										// Substituir <img> por <Image />
+										<Image
+											ref={imgRef as React.RefObject<HTMLImageElement>} // Adicionar type assertion se necessário
 											src={mapPreview}
 											alt='Mapa Preview'
+											fill // Usar fill para cobrir o container
 											style={{
-												position: 'absolute',
-												top: 0,
-												left: 0,
-												userSelect: 'none',
-												pointerEvents: 'none',
+												objectFit: 'cover', // ou 'contain' dependendo do comportamento desejado
 												transform: `translate(${translate.x}px, ${translate.y}px) scale(${zoom})`,
 												transition: dragging ? 'none' : 'transform 0.2s ease',
-												borderRadius: '4px',
-												width: 'auto',
-												height: 'auto',
-												maxWidth: 'none',
-												maxHeight: 'none',
+												userSelect: 'none',
+												pointerEvents: 'none',
+												transformOrigin: '0 0', // Aplicar transform a partir do canto superior esquerdo
 											}}
 											draggable={false}
 										/>
 									) : (
-										<span style={{ fontSize: '48px' }}>🗺️</span>
+										<div className={styles.placeholder}>
+											<span style={{ fontSize: '48px' }}>🗺️</span>
+										</div>
 									)}
 								</div>
 								<div className={styles.sideIcons}>

@@ -22,8 +22,16 @@ const eslintConfig = [
       "no-unreachable": "error",
       "no-console": "error",
       "prefer-const": "warn",
-      "yoda": "warn"
-    }
+      "yoda": "warn",
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
+    },
   },
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
