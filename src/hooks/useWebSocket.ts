@@ -10,7 +10,7 @@ interface WebSocketConfig {
 
 interface WebSocketState {
 	isConnected: boolean
-	error: Event | null 
+	error: Event | null
 }
 
 interface WebSocketActions {
