@@ -1,22 +1,22 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 
 interface WebSocketConfig {
-	url: string | null // URL do WebSocket, pode ser null inicialmente
-	onMessage?: (message: unknown) => void // Corrigido: Usar unknown ou um tipo mais específico
+	url: string | null
+	onMessage?: (message: unknown) => void
 	onOpen?: (event: Event) => void
 	onClose?: (event: CloseEvent) => void
-	onError?: (event: Event) => void // Corrigido: Usar Event
+	onError?: (event: Event) => void
 }
 
 interface WebSocketState {
 	isConnected: boolean
-	error: Event | null // Corrigido: Usar Event
+	error: Event | null 
 }
 
 interface WebSocketActions {
-	sendMessage: (message: unknown) => void // Corrigido: Usar unknown ou um tipo mais específico
+	sendMessage: (message: unknown) => void
 	disconnect: () => void
-	connect: (url: string) => void // Adicionado função connect explícita se necessário
+	connect: (url: string) => void
 }
 
 const useWebSocket = ({
@@ -27,54 +27,46 @@ const useWebSocket = ({
 	onError,
 }: WebSocketConfig): WebSocketState & WebSocketActions => {
 	const [isConnected, setIsConnected] = useState(false)
-	const [error, setError] = useState<Event | null>(null) // Corrigido: Usar Event
+	const [error, setError] = useState<Event | null>(null)
 	const ws = useRef<WebSocket | null>(null)
 
-	// Função para conectar
 	const connect = useCallback(
 		(websocketUrl: string) => {
 			if (ws.current && ws.current.readyState !== WebSocket.CLOSED) {
-				// console.log('WebSocket já conectado ou conectando.'); // Removido console.log
+				// console.log('WebSocket já conectado ou conectando.');
 				return
 			}
 			if (!websocketUrl) {
-				// console.log('URL do WebSocket não fornecida para conectar.'); // Removido console.log
+				// console.log('URL do WebSocket não fornecida para conectar.');
 				return
 			}
-
-			// console.log(`Tentando conectar WebSocket em: ${websocketUrl}`); // Removido console.log
 			ws.current = new WebSocket(websocketUrl)
 
 			ws.current.onopen = (event) => {
-				// console.log('WebSocket conectado.'); // Removido console.log
+				// console.log('WebSocket conectado.');
 				setIsConnected(true)
-				setError(null) // Limpa qualquer erro anterior
+				setError(null)
 				onOpen?.(event)
 			}
 
 			ws.current.onmessage = (event) => {
-				// console.log('Mensagem recebida:', event.data); // Removido console.log
+				// console.log('Mensagem recebida:', event.data);
 				try {
 					const message = JSON.parse(event.data)
 					onMessage?.(message)
 				} catch (_e) {
-					// Adicionado _ para ignorar o parâmetro e
-					// console.error('Erro ao parsear mensagem JSON:', _e); // Removido console.error
-					// Opcional: Chamar onError ou onMessage com o erro de parse
+					// console.error('Erro ao parsear mensagem JSON:', _e);
 				}
 			}
 
 			ws.current.onerror = (event) => {
-				// console.error('Erro no WebSocket:', event); // Removido console.error
 				setError(event)
-				setIsConnected(false) // Considerar erro como desconexão
+				setIsConnected(false)
 				onError?.(event)
 			}
 
 			ws.current.onclose = (event) => {
-				// console.log('WebSocket desconectado.', event); // Removido console.log
 				setIsConnected(false)
-				// Opcional: Limpar o erro se o fechamento for normal (code 1000)
 				if (event.code === 1000) {
 					setError(null)
 				}
@@ -82,52 +74,41 @@ const useWebSocket = ({
 			}
 		},
 		[onMessage, onOpen, onClose, onError]
-	) // Dependências do useCallback
+	)
 
-	// Função para desconectar
 	const disconnect = useCallback(() => {
 		if (ws.current && ws.current.readyState === WebSocket.OPEN) {
-			// console.log('Desconectando WebSocket...'); // Removido console.log
+			// console.log('Desconectando WebSocket...');
 			ws.current.close()
 		} else {
-			// console.log('WebSocket já desconectado ou não conectado.'); // Removido console.log
+			// console.log('WebSocket já desconectado ou não conectado.');
 		}
 	}, [])
 
-	// Função para enviar mensagem
 	const sendMessage = useCallback((message: unknown) => {
-		// Corrigido: Usar unknown
 		if (ws.current && ws.current.readyState === WebSocket.OPEN) {
 			try {
 				const jsonMessage = JSON.stringify(message)
 				ws.current.send(jsonMessage)
-				// console.log('Mensagem enviada:', jsonMessage); // Removido console.log
 			} catch (_e) {
-				// Adicionado _ para ignorar o parâmetro e
-				// console.error('Erro ao serializar ou enviar mensagem:', _e); // Removido console.error
-				// Opcional: Lidar com erro de serialização/envio
+				// console.error('Erro ao enviar mensagem:', _e)
 			}
 		} else {
-			// console.warn('WebSocket não está conectado. Mensagem não enviada:', message); // Removido console.warn
-			// Opcional: Lidar com o caso de não estar conectado (ex: enfileirar mensagens)
+			// console.warn('WebSocket não está aberto. Não é possível enviar mensagem.');
 		}
 	}, [])
 
-	// Efeito para conectar quando a URL muda
 	useEffect(() => {
 		if (url) {
 			connect(url)
 		} else {
-			// Se a URL se tornar null, desconecte
 			disconnect()
 		}
 
-		// Cleanup function para desconectar ao desmontar o componente ou quando a URL muda
 		return () => {
-			// console.log('Cleanup: Desconectando WebSocket...'); // Removido console.log
 			disconnect()
 		}
-	}, [url, connect, disconnect]) // Dependências do useEffect
+	}, [url, connect, disconnect])
 
 	return { isConnected, error, sendMessage, disconnect, connect }
 }

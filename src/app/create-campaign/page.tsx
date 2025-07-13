@@ -197,19 +197,18 @@ export default function CreateCampaignPage() {
 								style={{ cursor: dragging ? 'grabbing' : 'grab' }}>
 								<div className={styles.mapPreview}>
 									{mapPreview ? (
-										// Substituir <img> por <Image />
 										<Image
-											ref={imgRef as React.RefObject<HTMLImageElement>} // Adicionar type assertion se necessário
+											ref={imgRef as React.RefObject<HTMLImageElement>}
 											src={mapPreview}
 											alt='Mapa Preview'
-											fill // Usar fill para cobrir o container
+											fill
 											style={{
-												objectFit: 'cover', // ou 'contain' dependendo do comportamento desejado
+												objectFit: 'cover',
 												transform: `translate(${translate.x}px, ${translate.y}px) scale(${zoom})`,
 												transition: dragging ? 'none' : 'transform 0.2s ease',
 												userSelect: 'none',
 												pointerEvents: 'none',
-												transformOrigin: '0 0', // Aplicar transform a partir do canto superior esquerdo
+												transformOrigin: '0 0',
 											}}
 											draggable={false}
 										/>
