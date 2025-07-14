@@ -5,6 +5,7 @@ import './app.css'
 import { Cinzel } from 'next/font/google'
 import MainContent from './MainContent'
 import CampaignButtons from './CampaignButtons'
+import { useRouter } from 'next/navigation'
 
 const cinzel = Cinzel({
 	subsets: ['latin'],
@@ -12,6 +13,21 @@ const cinzel = Cinzel({
 })
 
 const Page: React.FC = () => {
+	const router = useRouter()
+
+	const handleLogout = async () => {
+		try {
+			const res = await fetch('/api/logout', { method: 'POST' })
+			if (res.ok) {
+				router.push('/login')
+			} else {
+				alert('Erro ao deslogar')
+			}
+		} catch {
+			alert('Erro ao conectar ao servidor')
+		}
+	}
+
 	return (
 		<div className='page-container'>
 			{/* SIDEBAR */}
@@ -34,7 +50,9 @@ const Page: React.FC = () => {
 
 					{/* SIDEBAR AND ADITIONAL BUTTONS */}
 					<div className='topbar-right'>
-						<button className='logout-button'>LOGOUT</button>
+						<button onClick={handleLogout} className='logout-button'>
+							LOGOUT
+						</button>
 						<button className='avatar-button'>
 							<img src='/images/profile.png' alt='Avatar do Usuário' className='avatar-image' />
 						</button>

@@ -20,32 +20,27 @@ export default function LoginPage() {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({ username, password: senha }),
+				credentials: 'include',
 			})
 
-			const loginData = await loginRes.json()
-
 			if (!loginRes.ok) {
-				setMensagem(loginData.detail || 'Erro no login.')
+				const err = await loginRes.json()
+				setMensagem(err.detail ?? 'Erro no login.')
 				return
 			}
 
-			const token = loginData.access_token
-
-			localStorage.setItem('token', token)
-
 			const userRes = await fetch('/api/userinfo', {
 				method: 'GET',
-				headers: { Authorization: `Bearer ${token}` },
+				credentials: 'include',
 			})
 
-			const userInfo = await userRes.json()
-
-			if (!userRes.ok || !userInfo.role) {
+			const info = await userRes.json()
+			if (!userRes.ok || !info.role) {
 				setMensagem('Não foi possível recuperar o role do usuário.')
 				return
 			}
 
-			const role = userInfo.role.toUpperCase()
+			const role = info.role.toUpperCase().replace(' ', '_')
 
 			if (role === 'DUNGEON_MASTER') {
 				router.push('/dashboard-master')

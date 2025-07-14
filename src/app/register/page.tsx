@@ -3,19 +3,17 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import styles from './register.module.css'
 import Image from 'next/image'
+import styles from './register.module.css'
 
 export default function RegisterPage() {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const [confirmPassword, setConfirmPassword] = useState('')
 	const [username, setUsername] = useState('')
-
 	const [role, setRole] = useState<'DUNGEON_MASTER' | 'PLAYER'>('DUNGEON_MASTER')
 	const [error, setError] = useState('')
 	const [loading, setLoading] = useState(false)
-
 	const router = useRouter()
 
 	const handleSubmit = async (event: React.FormEvent) => {
@@ -35,7 +33,12 @@ export default function RegisterPage() {
 			const response = await fetch('/api/register', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ email, password, username, role: roleToSend }),
+				body: JSON.stringify({
+					email,
+					password,
+					username,
+					role: roleToSend,
+				}),
 			})
 
 			const result = await response.json()
@@ -51,11 +54,11 @@ export default function RegisterPage() {
 				router.push('/login')
 			}
 		} catch (err) {
-			const errorMessage =
+			const msg =
 				err instanceof Error
 					? `Erro: ${err.message}`
 					: 'Ocorreu um erro desconhecido ao tentar conectar com o servidor.'
-			setError(errorMessage)
+			setError(msg)
 		} finally {
 			setLoading(false)
 		}
