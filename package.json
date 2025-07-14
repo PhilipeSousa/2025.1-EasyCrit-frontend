@@ -11,6 +11,14 @@
     "style": "npx prettier . --write"
   },
   "dependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/mongodb": "^4.0.6",
+    "bcryptjs": "^3.0.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.17.0",
+    "lucide-react": "^0.511.0",
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
@@ -24,5 +32,18 @@
     "eslint-config-next": "15.3.2",
     "prettier": "^3.5.3",
     "typescript": "^5"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fga-eps-mds/2025.1-EasyCrit-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fga-eps-mds/2025.1-EasyCrit-frontend/issues"
+  },
+  "homepage": "https://github.com/fga-eps-mds/2025.1-EasyCrit-frontend#readme"
 }

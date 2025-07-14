@@ -1,0 +1,85 @@
+.botoes-container {
+  position: absolute;
+  top: 13.5rem;
+  left: 18%;
+  width: 16%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
+
+.btn {
+  padding: 5% 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 1px solid #071013;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+  max-width: 100%; 
+
+  /* SHADOWS */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.create {
+  background-color: #F77B20;
+  color: #071013;
+}
+
+.create:hover {
+  background-color: #F77B20;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.delete {
+  background-color: #DFE0E2;
+  color: #071013;
+}
+
+.delete:hover {
+  background-color: #DFE0E2;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .botoes-container {
+    position: static;
+    width: 90vw; 
+    margin: 0 auto;
+    top: auto;
+    left: auto;
+  }
+
+  .btn {
+    padding: 12px 1.5rem;
+    font-size: 13px;
+  }
+}
+
+.input-code {
+  background-color: transparent;
+  color: #071013;
+  border: 1px solid black;
+  font-family: inherit;
+  text-align: center;
+}
+
+.input-code::placeholder {
+  color: #071013;
+  opacity: 0.7;
+}
+
+.input-code:focus {
+  outline: none;
+  border-color: #071013;
+}
+
+@media (max-width: 1366px) {
+  .botoes-container {
+    top: 9.1rem; /* Fixed */
+  }
+}
