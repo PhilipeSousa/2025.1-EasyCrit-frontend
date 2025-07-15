@@ -16,13 +16,13 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    '/dashboard-player',
-    '/dashboard-player/:path*',
-    '/dashboard-master',
-    '/dashboard-master/:path*',
-    '/dashboard/:path*',
-    '/create-campaign',
-    '/create-character',
-  ],
+	matcher: [
+		'/dashboard-player',
+		'/dashboard-player/:path*',
+		'/dashboard-master',
+		'/dashboard-master/:path*',
+		'/dashboard/:path*',
+		'/create-campaign',
+		'/create-character',
+	],
 }
