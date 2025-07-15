@@ -136,7 +136,7 @@ export default function RegisterPage() {
 											onChange={() => setRole('DUNGEON_MASTER')}
 										/>
 										<Image
-											src='/images/mestre-icon.svg'
+											src='/mestre-icon.svg'
 											alt='Dungeon Master'
 											width={40}
 											height={40}
@@ -153,7 +153,7 @@ export default function RegisterPage() {
 											checked={role === 'PLAYER'}
 											onChange={() => setRole('PLAYER')}
 										/>
-										<Image src='/images/jogador-icon.svg' alt='Player' width={40} height={40} className={styles.roleImage} />
+										<Image src='/jogador-icon.svg' alt='Player' width={40} height={40} className={styles.roleImage} />
 										<span className={styles.roleLabel}>Jogador</span>
 									</label>
 								</div>
