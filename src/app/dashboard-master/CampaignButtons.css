@@ -10,6 +10,8 @@
 }
 
 .btn {
+  display: inline-block;  
+  text-decoration: none;
   padding: 5% 0;
   width: 100%;
   box-sizing: border-box;
@@ -20,9 +22,10 @@
   cursor: pointer;
   transition: background 0.3s, box-shadow 0.3s;
   max-width: 100%; 
-  
-  /* SHADOW */
+
+  /* Shadow */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  color: inherit; /* herda cor, importante para links */
 }
 
 .create {
