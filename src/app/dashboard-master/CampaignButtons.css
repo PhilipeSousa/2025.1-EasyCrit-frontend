@@ -26,6 +26,10 @@
   /* Shadow */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   color: inherit; /* herda cor, importante para links */
+
+  /* CENTRAR TEXTO */
+  text-align: center;
+  line-height: 1.2; /* opcional para ajuste vertical */
 }
 
 .create {
