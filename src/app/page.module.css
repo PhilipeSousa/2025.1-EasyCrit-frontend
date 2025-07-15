@@ -1,7 +1,7 @@
 /* Mantém o grid original mas redefine tema EasyCrit */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap');
 
-:root {
+body {
   --black-blue: #071013;
   --vibrant-orange: #F77B20;
   --very-light-gray: #DFE0E2;
